@@ -17,12 +17,48 @@ export default function SiteHeader() {
         </div>
       </div>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3 text-lg font-semibold">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ember text-white">
-            A
-          </span>
-          <span className="font-display">Adventise</span>
-        </Link>
+        <Link
+  href="/"
+  aria-label="Adventise"
+  className="group flex items-center gap-3 select-none"
+>
+  {/* Logo mark */}
+  <div
+    className="relative flex h-11 w-11 items-center justify-center
+               rounded-xl bg-gradient-to-br
+               from-amber-500 via-orange-500 to-amber-600
+               shadow-lg transition-all duration-300
+               group-hover:scale-105"
+  >
+    {/* Stylized A + forward arrow */}
+    <svg
+      viewBox="0 0 24 24"
+      className="h-6 w-6 text-white"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 20L12 4L20 20" />
+      <path d="M12 4V14" />
+      <path d="M9 11L12 14L15 11" />
+    </svg>
+
+    {/* ember glow */}
+    <span className="absolute inset-0 rounded-xl bg-orange-400 opacity-25 blur-lg"></span>
+  </div>
+
+  {/* Wordmark */}
+  <span
+    className="font-display text-xl font-bold tracking-tight
+               text-gray-900 transition-colors duration-300
+               group-hover:text-amber-600"
+  >
+    Adventise
+  </span>
+</Link>
+
         <nav className="hidden items-center gap-6 text-sm font-medium text-ink lg:flex">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-ember">
