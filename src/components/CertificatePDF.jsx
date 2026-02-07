@@ -320,7 +320,7 @@ export default function CertificatePDF({ certificate, qrCodeDataUrl, logoDataUrl
                         alt="Certificate verification QR code"
                       />
                     </View>
-                    <Text style={styles.scanText}>Scan for instant verification</Text>
+                    <Text style={styles.scanText}>(Scan QR for instant verification)</Text>
                   </View>
                 </View>
               </View>
