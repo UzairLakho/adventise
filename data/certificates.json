@@ -28,5 +28,16 @@
     "duration": "06 Months",
     "trainingLocation": "Karachi, Pakistan",
     "status": "Valid"
+  },
+
+   {
+    "id": "ADV-MS-2025-02204",
+    "name": "Rutab Lakho",
+    "course": "MS Office Productivity & Office Automation",
+    "courseCode": "ADV-MS-31",
+    "issueDate": "2025-07-01",
+    "duration": "06 Months",
+    "trainingLocation": "Karachi, Pakistan",
+    "status": "Valid"
   }
 ]
