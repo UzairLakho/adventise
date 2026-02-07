@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   title: "Certificate Verification",
   description:
     "Verify Adventise Certificate of Completion records using a certificate ID.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
 };
 
 export default function VerifyPage() {

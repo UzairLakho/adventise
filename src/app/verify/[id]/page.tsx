@@ -8,6 +8,16 @@ export const metadata: Metadata = {
   title: "Certificate Verification",
   description:
     "Validate Adventise Certificate of Completion records for issued trainees.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
 };
 
 export function generateStaticParams() {
