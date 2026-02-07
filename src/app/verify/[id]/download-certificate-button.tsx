@@ -90,6 +90,95 @@ function createLogoDataUrl() {
   return canvas.toDataURL("image/png");
 }
 
+function createSignatureDataUrl() {
+  const canvas = document.createElement("canvas");
+  canvas.width = 620;
+  canvas.height = 190;
+  const ctx = canvas.getContext("2d");
+
+  if (!ctx) {
+    throw new Error("Unable to create signature image");
+  }
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.save();
+  ctx.translate(8, 0);
+  ctx.rotate(-0.035);
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+
+  // Primary ink pass for the handwritten "Uzair" body.
+  ctx.strokeStyle = "rgba(11, 31, 42, 0.92)";
+  ctx.lineWidth = 4.1;
+  ctx.beginPath();
+  // U
+  ctx.moveTo(26, 88);
+  ctx.bezierCurveTo(36, 138, 86, 144, 94, 92);
+  ctx.bezierCurveTo(101, 66, 117, 70, 121, 92);
+  ctx.bezierCurveTo(127, 142, 171, 142, 181, 96);
+  // z transition
+  ctx.bezierCurveTo(191, 68, 224, 67, 232, 88);
+  ctx.bezierCurveTo(237, 101, 231, 116, 214, 122);
+  ctx.bezierCurveTo(205, 125, 210, 132, 224, 132);
+  ctx.bezierCurveTo(244, 132, 260, 122, 268, 104);
+  // a
+  ctx.bezierCurveTo(275, 87, 288, 79, 303, 84);
+  ctx.bezierCurveTo(321, 90, 322, 111, 309, 121);
+  ctx.bezierCurveTo(298, 129, 283, 127, 279, 116);
+  ctx.bezierCurveTo(274, 104, 287, 95, 309, 98);
+  // i stem and link
+  ctx.moveTo(336, 93);
+  ctx.bezierCurveTo(336, 112, 338, 127, 346, 133);
+  ctx.bezierCurveTo(358, 141, 371, 128, 379, 108);
+  // r + final flourish
+  ctx.bezierCurveTo(387, 88, 403, 82, 417, 91);
+  ctx.bezierCurveTo(431, 100, 432, 116, 423, 126);
+  ctx.bezierCurveTo(454, 124, 485, 110, 510, 92);
+  ctx.bezierCurveTo(525, 81, 538, 79, 547, 88);
+  ctx.bezierCurveTo(552, 93, 553, 100, 549, 106);
+  ctx.stroke();
+
+  // Secondary thin pass adds pen-pressure variation and realism.
+  ctx.strokeStyle = "rgba(11, 31, 42, 0.55)";
+  ctx.lineWidth = 2.15;
+  ctx.beginPath();
+  ctx.moveTo(31, 92);
+  ctx.bezierCurveTo(43, 136, 86, 140, 94, 96);
+  ctx.bezierCurveTo(101, 72, 114, 74, 118, 95);
+  ctx.bezierCurveTo(124, 140, 166, 140, 178, 100);
+  ctx.bezierCurveTo(190, 74, 220, 73, 229, 90);
+  ctx.bezierCurveTo(235, 101, 230, 113, 216, 118);
+  ctx.bezierCurveTo(207, 121, 211, 127, 225, 128);
+  ctx.bezierCurveTo(244, 129, 259, 121, 268, 106);
+  ctx.bezierCurveTo(276, 91, 289, 83, 301, 87);
+  ctx.bezierCurveTo(316, 92, 316, 109, 305, 117);
+  ctx.bezierCurveTo(296, 124, 285, 123, 282, 114);
+  ctx.moveTo(339, 95);
+  ctx.bezierCurveTo(340, 111, 342, 124, 349, 129);
+  ctx.bezierCurveTo(361, 137, 372, 124, 379, 107);
+  ctx.bezierCurveTo(386, 90, 400, 86, 412, 93);
+  ctx.bezierCurveTo(423, 100, 423, 113, 416, 122);
+  ctx.bezierCurveTo(450, 120, 483, 106, 510, 90);
+  ctx.stroke();
+
+  // Dot on the "i".
+  ctx.fillStyle = "rgba(11, 31, 42, 0.88)";
+  ctx.beginPath();
+  ctx.arc(334, 75, 4.2, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Underline flourish to finish the signature.
+  ctx.strokeStyle = "rgba(11, 31, 42, 0.8)";
+  ctx.lineWidth = 2.6;
+  ctx.beginPath();
+  ctx.moveTo(232, 146);
+  ctx.bezierCurveTo(305, 155, 410, 150, 546, 122);
+  ctx.stroke();
+  ctx.restore();
+
+  return canvas.toDataURL("image/png");
+}
+
 export default function DownloadCertificateButton({
   certificate,
 }: DownloadCertificateButtonProps) {
@@ -120,6 +209,7 @@ export default function DownloadCertificateButton({
 
       // Render a PNG logo so it consistently appears inside @react-pdf/renderer.
       const logoDataUrl = createLogoDataUrl();
+      const signatureDataUrl = createSignatureDataUrl();
 
       // Generate PDF in-browser and download as a file for the trainee.
       const fileBlob = await pdf(
@@ -127,6 +217,7 @@ export default function DownloadCertificateButton({
           certificate={certificate}
           qrCodeDataUrl={qrCodeDataUrl}
           logoDataUrl={logoDataUrl}
+          signatureDataUrl={signatureDataUrl}
         />
       ).toBlob();
 

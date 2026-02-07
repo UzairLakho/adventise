@@ -169,6 +169,11 @@ const styles = StyleSheet.create({
   signatoryBlock: {
     flex: 1,
   },
+  signatureImage: {
+    width: 145,
+    height: 44,
+    marginBottom: 2,
+  },
   signatoryLine: {
     width: 190,
     borderBottomWidth: 1,
@@ -221,7 +226,12 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function CertificatePDF({ certificate, qrCodeDataUrl, logoDataUrl }) {
+export default function CertificatePDF({
+  certificate,
+  qrCodeDataUrl,
+  logoDataUrl,
+  signatureDataUrl,
+}) {
   return (
     <Document>
       <Page size="A4" orientation="landscape" wrap={false} style={styles.page}>
@@ -302,6 +312,13 @@ export default function CertificatePDF({ certificate, qrCodeDataUrl, logoDataUrl
             <View>
               <View style={styles.bottomSection}>
                 <View style={styles.signatoryBlock}>
+                  {signatureDataUrl ? (
+                    <Image
+                      src={signatureDataUrl}
+                      style={styles.signatureImage}
+                      alt="Authorized signature Uzair"
+                    />
+                  ) : null}
                   <View style={styles.signatoryLine} />
                   <Text style={styles.signatoryText}>
                     Authorized Signatory{"\n"}Adventise
