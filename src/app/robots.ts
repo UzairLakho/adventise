@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/verify", "/verify/*"],
+        disallow: ["/verify/*"],
       },
     ],
     sitemap: "https://adventise.com/sitemap.xml",
