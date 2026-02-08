@@ -273,7 +273,7 @@ export default function CertificatePDF({
               <View style={styles.skillsBox}>
                 <Text style={styles.skillsHeading}>Skills Section</Text>
                 <Text style={styles.skillsText}>
-                  The training focused on practical skills in: Local SEO, Google My Business Optimization & Citations Training.</M>.
+                  The training focused on practical skills in: Local SEO, Google My Business Optimization & Citations Training.
                 </Text>
               </View>
 
