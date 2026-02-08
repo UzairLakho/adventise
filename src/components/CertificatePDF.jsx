@@ -273,9 +273,7 @@ export default function CertificatePDF({
               <View style={styles.skillsBox}>
                 <Text style={styles.skillsHeading}>Skills Section</Text>
                 <Text style={styles.skillsText}>
-                  The training focused on practical skills in: Microsoft Word,
-                  Microsoft Excel, Microsoft PowerPoint, office documentation,
-                  spreadsheets, presentations, and workplace productivity tools.
+                  The training focused on practical skills in: Local SEO, Google My Business Optimization & Citations Training.</M>.
                 </Text>
               </View>
 
