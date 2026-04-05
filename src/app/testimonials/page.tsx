@@ -3,8 +3,8 @@ import { Button, SectionHeading } from "@/components/ui";
 import { testimonials } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Testimonials",
-  description: "Hear from growth leaders who partner with Adventise.",
+  title: "Client Concerns",
+  description: "Common issues local-business owners bring to Adventise before a local SEO or Maps cleanup.",
 };
 
 export default function TestimonialsPage() {
@@ -13,9 +13,9 @@ export default function TestimonialsPage() {
       <section className="bg-noise">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <SectionHeading
-            eyebrow="Testimonials"
-            title="Partnerships built on trust and results"
-            description="We embed with your team, move quickly, and report the metrics that matter."
+            eyebrow="What owners say"
+            title="The common problems local businesses mention before they ask for help"
+            description="These are recurring themes we hear from service businesses before the cleanup starts."
           />
         </div>
       </section>
@@ -37,16 +37,19 @@ export default function TestimonialsPage() {
         <div className="grid gap-8 rounded-[32px] border border-line bg-ink p-12 text-white shadow-soft lg:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-4">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-mint">
-              Ready to start
+              Ready to fix yours?
             </p>
-            <h2 className="text-3xl font-semibold">Let&apos;s map your growth plan.</h2>
+            <h2 className="text-3xl font-semibold">
+              Let&apos;s figure out what is suppressing your local visibility.
+            </h2>
             <p className="text-sm text-white/80">
-              Book a strategy call and we will outline the fastest path to impact.
+              We will review your market, profile, website, and trust signals
+              so you can see what matters most first.
             </p>
           </div>
           <div className="space-y-4">
-            <Button href="/contact" className="w-full justify-center">
-              Book a strategy call
+            <Button href="/#audit-form" className="w-full justify-center">
+              Request a free audit
             </Button>
             <Button href="/services" variant="secondary" className="w-full justify-center">
               Explore services
@@ -57,4 +60,3 @@ export default function TestimonialsPage() {
     </div>
   );
 }
-

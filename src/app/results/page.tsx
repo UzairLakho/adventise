@@ -4,7 +4,7 @@ import { caseStudies, stats, testimonials } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Results",
-  description: "See how Adventise drives measurable growth for modern brands.",
+  description: "See how Adventise frames local SEO, Google Maps, and website wins for service businesses.",
 };
 
 export default function ResultsPage() {
@@ -14,8 +14,8 @@ export default function ResultsPage() {
         <div className="mx-auto max-w-6xl px-6 py-20">
           <SectionHeading
             eyebrow="Results"
-            title="Evidence-backed growth across industries"
-            description="We focus on revenue metrics: pipeline, CAC, LTV, and conversion lift. Here are the outcomes we are proud of."
+            title="What better local visibility usually turns into"
+            description="We care about whether your business becomes easier to find, easier to trust, and easier to contact when the right people search."
           />
         </div>
       </section>
@@ -34,9 +34,9 @@ export default function ResultsPage() {
       <section className="bg-sand">
         <div className="mx-auto max-w-6xl space-y-10 px-6 py-20">
           <SectionHeading
-            eyebrow="Case studies"
-            title="Strategic wins with measurable impact"
-            description="Composite case studies reflecting real engagement patterns and performance improvements."
+            eyebrow="Composite examples"
+            title="Representative local-growth scenarios"
+            description="These are composite examples of the kinds of local bottlenecks we help solve and the types of outcomes businesses are usually trying to create."
           />
           <div className="grid gap-6 md:grid-cols-2">
             {caseStudies.map((study) => (
@@ -61,9 +61,9 @@ export default function ResultsPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-20">
         <SectionHeading
-          eyebrow="Testimonials"
-          title="Teams that feel the lift"
-          description="We work side-by-side with leadership teams to drive growth that sticks."
+          eyebrow="Before the audit"
+          title="What local-business owners usually tell us first"
+          description="These are common themes we hear before the cleanup starts."
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {testimonials.map((item) => (
@@ -84,21 +84,18 @@ export default function ResultsPage() {
               Your turn
             </p>
             <h2 className="text-3xl font-semibold">
-              Let&apos;s map your next growth win.
+              Let&apos;s find the local bottleneck that is costing you the most.
             </h2>
             <p className="text-sm text-white/80">
-              We will build a roadmap aligned to your goals and launch quickly.
+              We will review your market, your current visibility, and the
+              quickest path to more qualified local leads.
             </p>
           </div>
           <div className="space-y-4">
-            <Button href="/contact" className="w-full justify-center">
-              Book a strategy call
+            <Button href="/#audit-form" className="w-full justify-center">
+              Request a free audit
             </Button>
-            <Button
-              href="/services"
-              variant="secondary"
-              className="w-full justify-center"
-            >
+            <Button href="/services" variant="secondary" className="w-full justify-center">
               Explore services
             </Button>
           </div>
@@ -107,4 +104,3 @@ export default function ResultsPage() {
     </div>
   );
 }
-

@@ -45,25 +45,22 @@ export default function SiteFooter() {
           <Link href="/results" className="block hover:text-ember">
             Results
           </Link>
-          <Link href="/careers" className="block hover:text-ember">
-            Careers
-          </Link>
           <Link href="/contact" className="block hover:text-ember">
             Contact
           </Link>
         </div>
         <div className="space-y-3 text-sm">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
-            Resources
+            Learn
           </p>
           <Link href="/resources" className="block hover:text-ember">
-            Insights
+            Resources
           </Link>
           <Link href="/case-studies" className="block hover:text-ember">
-            Case Studies
+            Composite Examples
           </Link>
-          <Link href="/testimonials" className="block hover:text-ember">
-            Testimonials
+          <Link href="/#audit-form" className="block hover:text-ember">
+            Free Audit
           </Link>
         </div>
       </div>

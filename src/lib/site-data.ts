@@ -8,311 +8,229 @@ export const navLinks = [
 
 export const services = [
   {
-    slug: "seo",
-    title: "SEO & Organic Growth",
+    slug: "google-business-profile",
+    title: "Google Maps & GBP Optimization",
     hero: {
-      title: "Own the intent that matters most.",
+      title: "Show up stronger when nearby customers search.",
       subtitle:
-        "Technical SEO, content clusters, and authority-building designed to grow qualified pipeline, not vanity metrics.",
+        "We optimize your Google Business Profile so more people find you, trust what they see, and call your business.",
     },
     summary:
-      "We prioritize the revenue-driving queries, rebuild your technical foundation, and create content that earns clicks and backlinks.",
+      "From categories and services to photos, posts, reviews, and service areas, we turn your profile into a better local lead source.",
     outcomes: [
-      "Technical and Core Web Vitals improvements",
-      "Topic clusters mapped to revenue stages",
-      "Authority links and digital PR",
-      "Conversion-focused on-page optimization",
+      "Clearer Google Business Profile positioning",
+      "Stronger local relevance for your core services",
+      "Better trust signals before the click or call",
+      "A repeatable review and profile update workflow",
     ],
     deliverables: [
-      "Search visibility audit",
-      "Content roadmap and briefs",
-      "Monthly performance sprint plan",
-      "Conversion and schema optimization",
+      "GBP audit and local competitor review",
+      "Category, service, and service-area cleanup",
+      "Profile copy, photo, and posting plan",
+      "Review request workflow and response guidance",
     ],
   },
   {
-    slug: "ppc",
-    title: "Paid Media & PPC",
+    slug: "local-seo",
+    title: "Local SEO & Service-Area Pages",
     hero: {
-      title: "Performance ads engineered for margin.",
+      title: "Rank for the services and cities that matter most.",
       subtitle:
-        "Full-funnel paid search and paid social built around CAC targets and measurable contribution to revenue.",
+        "We build the local SEO foundation that helps your website earn more qualified calls, quote requests, and organic visibility.",
     },
     summary:
-      "From keyword architecture to landing page CRO, we build campaigns that scale efficiently and keep your brand premium.",
+      "We map local search intent, tighten on-page signals, and build service and location pages around how your best customers actually search.",
     outcomes: [
-      "Media mix modeling and budget steering",
-      "High-intent search capture",
-      "Creative testing frameworks",
-      "Real-time performance dashboards",
+      "Better service and city page coverage",
+      "Stronger internal linking and local relevance",
+      "Cleaner technical and on-page SEO foundations",
+      "More qualified local search traffic",
     ],
     deliverables: [
-      "Account and conversion audit",
-      "Campaign rebuild and launch",
-      "Creative testing roadmap",
-      "Weekly optimization cadence",
+      "Local keyword and competitor map",
+      "Service and location page roadmap",
+      "On-page SEO improvements",
+      "Schema, internal linking, and content priorities",
     ],
   },
   {
-    slug: "social-media",
-    title: "Social Media Growth",
+    slug: "local-websites",
+    title: "Websites & Landing Pages for Local Leads",
     hero: {
-      title: "Social that moves the market.",
+      title: "Turn local traffic into calls and quote requests.",
       subtitle:
-        "Content systems, community, and distribution that turn attention into qualified demand.",
+        "We build or improve websites so they load fast, look trustworthy, and make it easy for local customers to contact you.",
     },
     summary:
-      "We create a repeatable cadence of storytelling, paid amplification, and community playbooks that build trust fast.",
+      "If your site feels dated, thin, or unclear, we simplify the message, improve conversion paths, and build pages that support local SEO.",
     outcomes: [
-      "Editorial calendars mapped to launch cycles",
-      "Content frameworks that scale",
-      "Influencer and partner activations",
-      "Paid social amplification strategy",
+      "Cleaner mobile experience for local visitors",
+      "Clearer calls to action and quote flows",
+      "Pages built for trust and local conversion",
+      "A better handoff from Maps and Search to contact",
     ],
     deliverables: [
-      "Audience insights workshop",
-      "Creative direction and templates",
-      "Content production sprint",
-      "Channel growth dashboard",
+      "Messaging and page-structure improvements",
+      "Homepage, service page, and contact page upgrades",
+      "Mobile UX and conversion improvements",
+      "Tracking setup and local trust elements",
     ],
   },
   {
-    slug: "web-design",
-    title: "Web Design & Development",
+    slug: "reviews-citations",
+    title: "Reviews, Citations & Local Trust Signals",
     hero: {
-      title: "Sites that sell, built for speed.",
+      title: "Give Google and customers more reasons to trust you.",
       subtitle:
-        "High-converting, performance-focused websites that load fast and tell a sharp story.",
+        "We strengthen the local trust layer around your business so rankings, click-throughs, and conversions have a better foundation.",
     },
     summary:
-      "We combine brand strategy, UX design, and modern development to build a site that earns trust in seconds.",
+      "From review workflows to citation consistency and trust cues, we help local businesses clean up signals that influence visibility and conversion.",
     outcomes: [
-      "Conversion-oriented UX architecture",
-      "Design system and component library",
-      "Performance-first implementation",
-      "Analytics-ready launch",
+      "More consistent business information across the web",
+      "Better review acquisition habits",
+      "Stronger trust signals for local searchers",
+      "Less confusion across listings and directories",
     ],
     deliverables: [
-      "Messaging and wireframe sprint",
-      "Visual design system",
-      "Responsive build and QA",
-      "SEO and analytics setup",
-    ],
-  },
-  {
-    slug: "content",
-    title: "Content & Creative",
-    hero: {
-      title: "Creative that earns attention and action.",
-      subtitle:
-        "From narrative to production, we build content that powers ads, SEO, and sales enablement.",
-    },
-    summary:
-      "We translate your differentiation into campaigns, landing pages, and multimedia assets that perform.",
-    outcomes: [
-      "Core narrative and positioning",
-      "Campaign creative systems",
-      "Conversion-ready landing pages",
-      "Evergreen content engine",
-    ],
-    deliverables: [
-      "Brand story workshop",
-      "Creative production plan",
-      "Content calendar and briefs",
-      "Asset library and handoff",
-    ],
-  },
-  {
-    slug: "cro",
-    title: "Conversion Rate Optimization",
-    hero: {
-      title: "Turn traffic into predictable revenue.",
-      subtitle:
-        "We run a test-and-learn program to increase qualified leads, sales, and LTV.",
-    },
-    summary:
-      "We align analytics, UX insights, and experimentation to remove friction across your funnel.",
-    outcomes: [
-      "Funnel diagnostics and prioritization",
-      "Experiment design and QA",
-      "Landing page performance upgrades",
-      "Insights that inform media strategy",
-    ],
-    deliverables: [
-      "Conversion audit",
-      "Experiment backlog",
-      "Test reporting and learnings",
-      "Ongoing iteration roadmap",
-    ],
-  },
-  {
-    slug: "amazon",
-    title: "Amazon Marketplace",
-    hero: {
-      title: "Win the digital shelf.",
-      subtitle:
-        "Listing optimization, retail media, and brand protection for marketplace growth.",
-    },
-    summary:
-      "We blend retail media, SEO, and creative to lift share of voice, reviews, and conversion.",
-    outcomes: [
-      "Listing optimization and A+ content",
-      "Retail media strategy and execution",
-      "Review and reputation growth",
-      "Inventory and pricing insights",
-    ],
-    deliverables: [
-      "Marketplace audit",
-      "Listing rebuild and creative",
-      "Sponsored ads architecture",
-      "Monthly performance scorecard",
+      "Citation audit and cleanup plan",
+      "Review request workflow",
+      "Business-info consistency checklist",
+      "Trust-signal and reputation roadmap",
     ],
   },
 ] as const;
 
 export const stats = [
-  { label: "Average CAC reduction", value: "-28%" },
-  { label: "Pipeline lift in 6 months", value: "+214%" },
-  { label: "Brands served", value: "150+" },
-  { label: "Retention rate", value: "92%" },
+  { label: "From Maps, local SEO, and website fixes", value: "More calls" },
+  { label: "From better city and service targeting", value: "Better leads" },
+  { label: "From stronger reviews and trust signals", value: "Higher trust" },
+  { label: "From a tighter local funnel", value: "Less wasted demand" },
 ];
 
 export const caseStudies = [
   {
-    title: "B2B SaaS Demand System",
-    industry: "Cloud Infrastructure",
+    title: "Service-area plumbing company",
+    industry: "Home Services",
     summary:
-      "Rebuilt paid search, SEO, and landing page flows to align with sales-qualified pipeline.",
-    results: ["3.1x pipeline growth", "-34% CAC", "48% higher demo rate"],
+      "Cleaned up the Google Business Profile, clarified service-area pages, and improved trust signals so nearby homeowners had a clearer path to call.",
+    results: ["Stronger map visibility", "More estimate calls", "Better service-page coverage"],
   },
   {
-    title: "DTC Subscription Flywheel",
-    industry: "Wellness",
+    title: "Local accounting firm",
+    industry: "Professional Services",
     summary:
-      "Introduced creative testing and lifecycle automations to lift retention and AOV.",
-    results: ["2.2x new customer growth", "+18% AOV", "-22% churn"],
+      "Reworked local pages around tax and bookkeeping intent, tightened internal linking, and improved the contact path for high-intent searches.",
+    results: ["Better local rankings", "Clearer lead flow", "Stronger organic intent capture"],
   },
   {
-    title: "Multi-Location Lead Engine",
-    industry: "Healthcare Services",
+    title: "Roofing company with a weak web presence",
+    industry: "Roofing",
     summary:
-      "Unified local SEO and paid media to dominate intent across priority markets.",
-    results: ["+162% leads", "4.6x ROAS", "75% faster speed-to-lead"],
+      "Built a leaner website structure, improved local trust cues, and aligned the site with the company’s Google Business Profile.",
+    results: ["Cleaner conversion path", "Stronger local trust", "More coverage for priority services"],
   },
   {
-    title: "Marketplace Expansion",
-    industry: "Consumer Electronics",
+    title: "Multi-location electrical contractor",
+    industry: "Multi-location Services",
     summary:
-      "Rebuilt listings and media strategy to increase share of voice on Amazon.",
-    results: ["+64% revenue", "31% higher conversion", "Top 3 category ranking"],
+      "Mapped the site and local profiles around each service area so the business could compete with more confidence across multiple cities.",
+    results: ["Better local structure", "Stronger location targeting", "A clearer market-by-market growth plan"],
   },
 ];
 
 export const testimonials = [
   {
     quote:
-      "Adventise didn't just improve our ads; they rebuilt our revenue system. The team is proactive, fast, and refreshingly honest.",
-    name: "Lena Torres",
-    role: "VP Growth, Flowstack",
+      "We do great work, but competitors keep showing up above us when people search in our city.",
+    name: "Common contractor concern",
+    role: "Before a local SEO cleanup",
   },
   {
     quote:
-      "We finally have a marketing partner who understands unit economics. Our pipeline is up and our brand feels premium.",
-    name: "Marcus Reed",
-    role: "CEO, EmberHealth",
+      "Our Google Business Profile gets views, but not enough calls. We are not sure what is missing.",
+    name: "Common service-business concern",
+    role: "Before a Maps optimization sprint",
   },
   {
     quote:
-      "The clarity they brought to our messaging and site experience drove a massive lift in conversions.",
-    name: "Arielle Kim",
-    role: "CMO, Northwind Labs",
+      "We have a website, but it does not feel like it is helping us win more local jobs.",
+    name: "Common owner concern",
+    role: "Before a conversion and local-page rebuild",
   },
 ];
 
 export const faqs = [
   {
-    question: "How quickly can we launch?",
+    question: "Can you help if I do not have a website yet?",
     answer:
-      "Most engagements start with a 2-week strategy sprint, followed by a 30- to 60-day build and optimization period.",
+      "Yes. We can start with your Google Business Profile and build a simple website or landing pages when that becomes the next bottleneck.",
   },
   {
-    question: "Do you work with in-house teams?",
+    question: "What if I have a website but no Google Business Profile?",
     answer:
-      "Yes. We plug into your current team, tools, and workflows to move faster and transfer knowledge along the way.",
+      "That is common. We can help you create, verify, and optimize your profile so you can compete in Maps as well as organic search.",
   },
   {
-    question: "What industries do you specialize in?",
+    question: "Do you work with service-area businesses and multi-location businesses?",
     answer:
-      "We focus on B2B, DTC, healthcare, SaaS, and multi-location brands with high LTV potential.",
+      "Yes. We work with single-location businesses, service-area businesses, and companies that need a repeatable setup across multiple locations.",
   },
   {
-    question: "What does a typical engagement include?",
+    question: "What usually matters most first: Maps, website SEO, or reviews?",
     answer:
-      "A dedicated strategist, creative lead, and performance team with weekly reporting, experimentation, and executive dashboards.",
+      "It depends on what is already in place. The audit is meant to show you the biggest local bottleneck before you spend time or money on the wrong fix.",
   },
   {
-    question: "How do you measure success?",
+    question: "How do you measure progress?",
     answer:
-      "We align on revenue and pipeline goals, then track leading indicators like CAC, conversion rate, and payback window.",
+      "We focus on local visibility, calls, quote requests, contact conversions, and whether the business is becoming easier to find and choose.",
   },
   {
-    question: "Can you take over mid-flight campaigns?",
+    question: "Can you help if I am starting from scratch?",
     answer:
-      "Absolutely. We start with an audit and stabilize performance before scaling or re-platforming.",
+      "Yes. We can help set up the foundation if you do not yet have a website, a polished profile, or consistent local signals.",
   },
 ];
 
 export const resourcePosts = [
   {
-    title: "A 90-day playbook for pipeline growth",
-    label: "Strategy",
-    date: "January 12, 2026",
+    title: "What to fix first if your Google Business Profile is not driving calls",
+    label: "Google Maps",
+    date: "March 18, 2026",
   },
   {
-    title: "Landing pages that turn paid traffic into revenue",
+    title: "How local service pages should be structured to win better leads",
+    label: "Local SEO",
+    date: "February 27, 2026",
+  },
+  {
+    title: "The trust signals that matter most for local service businesses",
     label: "Conversion",
-    date: "December 19, 2025",
-  },
-  {
-    title: "How to build a modern SEO content cluster",
-    label: "SEO",
-    date: "November 22, 2025",
+    date: "January 31, 2026",
   },
 ];
 
 export const values = [
   {
-    title: "Clarity beats chaos",
+    title: "Clarity over complexity",
     description:
-      "We simplify complex growth problems into focused sprints with clear owners and measurable outcomes.",
+      "Local businesses do not need jargon. They need a clear picture of what is broken, what matters first, and what will help drive more calls.",
   },
   {
-    title: "Craft with performance",
+    title: "Local intent first",
     description:
-      "Every creative decision ladders up to speed, conversion, and long-term brand equity.",
+      "We focus on how real customers search in your city or service area, then build pages, profiles, and trust signals around that intent.",
   },
   {
-    title: "Momentum through cadence",
+    title: "Practical momentum",
     description:
-      "Weekly learnings, monthly roadmaps, and quarterly resets keep growth compounding.",
+      "We prioritize the local changes that are easiest to act on and most likely to improve visibility, trust, and conversions.",
   },
 ];
 
-export const careers = [
-  {
-    role: "Performance Strategist",
-    location: "Remote, North America",
-    type: "Full-time",
-  },
-  {
-    role: "Senior Designer",
-    location: "Hybrid, New York",
-    type: "Full-time",
-  },
-  {
-    role: "Growth Analyst",
-    location: "Remote, Europe",
-    type: "Contract",
-  },
-];
-
+export const careers: Array<{
+  role: string;
+  location: string;
+  type: string;
+}> = [];

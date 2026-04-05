@@ -4,7 +4,7 @@ import { caseStudies } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Case Studies",
-  description: "Explore composite case studies and growth outcomes from Adventise engagements.",
+  description: "Explore representative local SEO and Google Maps scenarios for service businesses.",
 };
 
 export default function CaseStudiesPage() {
@@ -14,8 +14,8 @@ export default function CaseStudiesPage() {
         <div className="mx-auto max-w-6xl px-6 py-20">
           <SectionHeading
             eyebrow="Case studies"
-            title="Growth outcomes backed by measurable wins"
-            description="A snapshot of how our strategy, creative, and media programs unlock revenue."
+            title="Representative local-business scenarios, not padded agency theater"
+            description="These composite examples show the kinds of local visibility issues we help solve and the types of outcomes local businesses usually care about most."
           />
         </div>
       </section>
@@ -24,7 +24,7 @@ export default function CaseStudiesPage() {
         {caseStudies.map((study) => (
           <div
             key={study.title}
-            className="grid gap-6 rounded-3xl border border-line bg-white p-8 shadow-soft lg:grid-cols-[1.1fr_0.9fr]"
+            className="grid gap-6 rounded-3xl border border-line bg-white p-8 shadow-soft lg:grid-cols-[1.08fr_0.92fr]"
           >
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
@@ -42,20 +42,20 @@ export default function CaseStudiesPage() {
             </div>
             <div className="rounded-2xl border border-line bg-sand p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
-                Engagement focus
+                Typical engagement focus
               </p>
               <ul className="mt-4 space-y-3 text-sm text-ink">
                 <li className="flex items-start gap-3">
                   <span className="mt-1 h-2 w-2 rounded-full bg-ember" />
-                  Channel strategy and budget planning
+                  Local search and map visibility review
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 h-2 w-2 rounded-full bg-ember" />
-                  Landing page and CRO upgrades
+                  Website, service-page, and conversion improvements
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 h-2 w-2 rounded-full bg-ember" />
-                  Weekly performance optimization
+                  Trust-signal, review, and profile optimization
                 </li>
               </ul>
             </div>
@@ -67,24 +67,21 @@ export default function CaseStudiesPage() {
         <div className="grid gap-8 rounded-[32px] border border-line bg-ink p-12 text-white shadow-soft lg:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-4">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-mint">
-              Next steps
+              Next step
             </p>
             <h2 className="text-3xl font-semibold">
-              Let&apos;s build a case study with your brand.
+              Let&apos;s identify which local scenario your business is closest to.
             </h2>
             <p className="text-sm text-white/80">
-              Share your goals and we will put a measurable plan together.
+              We will look at your market, your current presence, and the first
+              changes that are most likely to improve local lead flow.
             </p>
           </div>
           <div className="space-y-4">
-            <Button href="/contact" className="w-full justify-center">
-              Start the conversation
+            <Button href="/#audit-form" className="w-full justify-center">
+              Request a free audit
             </Button>
-            <Button
-              href="/services"
-              variant="secondary"
-              className="w-full justify-center"
-            >
+            <Button href="/services" variant="secondary" className="w-full justify-center">
               Explore services
             </Button>
           </div>
@@ -93,4 +90,3 @@ export default function CaseStudiesPage() {
     </div>
   );
 }
-
