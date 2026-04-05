@@ -7,12 +7,13 @@ export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
-}): Metadata {
-  const service = services.find((item) => item.slug === params.slug);
+  params: Promise<{ slug: string }> | { slug: string };
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const service = services.find((item) => item.slug === slug);
   if (!service) {
     return { title: "Service" };
   }
@@ -23,8 +24,13 @@ export function generateMetadata({
   };
 }
 
-export default function ServiceDetail({ params }: { params: { slug: string } }) {
-  const service = services.find((item) => item.slug === params.slug);
+export default async function ServiceDetail({
+  params,
+}: {
+  params: Promise<{ slug: string }> | { slug: string };
+}) {
+  const { slug } = await params;
+  const service = services.find((item) => item.slug === slug);
   if (!service) {
     notFound();
   }
