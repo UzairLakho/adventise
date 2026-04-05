@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { allCertificates, findCertificateById } from "@/lib/certificate-data";
 import { formatIssueDate, normalizeCertificateId } from "@/lib/certificate-utils";
 import DownloadCertificateButton from "./download-certificate-button";
@@ -32,6 +33,11 @@ export default async function VerifyCertificateResult({
   const { id } = await params;
   const requestedId = normalizeCertificateId(id);
   const certificate = findCertificateById(requestedId);
+
+  if (!certificate) {
+    notFound();
+  }
+
   const isCertificateValid = Boolean(certificate && certificate.status === "Valid");
 
   return (
@@ -127,20 +133,7 @@ export default async function VerifyCertificateResult({
                 is currently not valid for verification.
               </p>
             </div>
-          ) : (
-            <div className="mt-4">
-              <h1 className="text-3xl font-semibold text-ink sm:text-4xl">
-                Certificate Not Found
-              </h1>
-              <p className="mt-3 text-sm text-slate">
-                We could not find a Certificate of Completion for ID{" "}
-                <span className="font-semibold text-ink">
-                  {requestedId || "Unknown ID"}
-                </span>
-                . Please check the ID and try again.
-              </p>
-            </div>
-          )}
+          ) : null}
 
           {isCertificateValid && certificate ? (
             <div className="mt-8">
