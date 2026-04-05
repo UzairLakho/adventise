@@ -83,6 +83,7 @@ function redirectWithStatus(url: URL) {
 export async function POST(request: Request) {
   const formData = await request.formData();
   const redirectTo = getField(formData, "redirectTo") || "/contact";
+  const successRedirectTo = getField(formData, "successRedirectTo") || redirectTo;
   const intentField = getField(formData, "intent");
   const intent =
     intentField === "seo-audit" || intentField === "local-audit"
@@ -93,6 +94,7 @@ export async function POST(request: Request) {
   const lastName = getField(formData, "lastName");
   const email = getField(formData, "email");
   const company = getField(formData, "company");
+  const trade = getField(formData, "trade");
   const location = getField(formData, "location");
   const auditType = getField(formData, "auditType");
   const website = getField(formData, "website");
@@ -104,6 +106,7 @@ export async function POST(request: Request) {
     lastName,
     email,
     company,
+    trade,
     location,
     auditType,
     website,
@@ -179,6 +182,10 @@ export async function POST(request: Request) {
             <td style="padding: 8px 0;">${escapeHtml(company || "Not provided")}</td>
           </tr>
           <tr>
+            <td style="padding: 8px 0; font-weight: 700;">Trade</td>
+            <td style="padding: 8px 0;">${escapeHtml(trade || "Not provided")}</td>
+          </tr>
+          <tr>
             <td style="padding: 8px 0; font-weight: 700;">Primary city / service area</td>
             <td style="padding: 8px 0;">${escapeHtml(location || "Not provided")}</td>
           </tr>
@@ -212,7 +219,7 @@ export async function POST(request: Request) {
       throw new Error(error.message);
     }
 
-    const redirectUrl = buildRedirectUrl(request, redirectTo, intent, "success");
+    const redirectUrl = buildRedirectUrl(request, successRedirectTo, intent, "success");
     return redirectWithStatus(redirectUrl);
   } catch (error) {
     console.error("Failed to send contact email.", error);
