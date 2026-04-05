@@ -7,12 +7,12 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-line bg-ivory/90 backdrop-blur">
       <div className="bg-ink text-ivory">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2 text-xs">
-          <span className="tracking-[0.2em] uppercase text-mint">New</span>
+          <span className="tracking-[0.2em] uppercase text-mint">Local SEO</span>
           <span className="text-ivory/80">
-            Growth sprints now open for Q2 launches.
+            Free SEO and Maps audits for local service businesses.
           </span>
-          <Link href="/contact" className="text-ivory underline">
-            Book a strategy call
+          <Link href="/#audit-form" className="text-ivory underline">
+            Request free audit
           </Link>
         </div>
       </div>
@@ -67,10 +67,10 @@ export default function SiteHeader() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
-          <Button href="/results" variant="secondary">
-            See Results
+          <Button href="/#audit-form" variant="secondary">
+            Free Audit
           </Button>
-          <Button href="/contact">Get a Growth Plan</Button>
+          <Button href="/contact">Talk to Us</Button>
         </div>
         <details className="relative md:hidden">
           <summary className="cursor-pointer list-none rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold">
@@ -83,11 +83,11 @@ export default function SiteHeader() {
                   {link.label}
                 </Link>
               ))}
-              <Link href="/results" className="hover:text-ember">
-                See Results
+              <Link href="/#audit-form" className="hover:text-ember">
+                Free Audit
               </Link>
               <Link href="/contact" className="hover:text-ember">
-                Get a Growth Plan
+                Talk to Us
               </Link>
             </div>
           </div>

@@ -19,33 +19,33 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://adventise.com"),
   title: {
-    default: "Adventise | Performance Marketing That Compounds",
+    default: "Adventise | Local SEO & Google Maps Growth",
     template: "%s | Adventise",
   },
   description:
-    "Adventise is a growth partner for ambitious brands. We blend strategy, creative, and performance media to build predictable revenue.",
+    "Adventise helps contractors, plumbers, accountants, and other local businesses get more calls from Google Search and Maps.",
   keywords: [
-    "digital marketing agency",
-    "SEO",
-    "PPC",
-    "paid media",
-    "conversion rate optimization",
-    "web design",
-    "content marketing",
+    "local SEO",
+    "google business profile",
+    "google maps seo",
+    "seo for plumbers",
+    "seo for contractors",
+    "local lead generation",
+    "service business marketing",
   ],
   openGraph: {
-    title: "Adventise | Performance Marketing That Compounds",
+    title: "Adventise | Local SEO & Google Maps Growth",
     description:
-      "Full-funnel strategy, creative, and media built for measurable revenue growth.",
+      "Local SEO, Google Business Profile optimization, and conversion-focused websites for service businesses.",
     type: "website",
     url: "https://adventise.com",
     siteName: "Adventise",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adventise | Performance Marketing That Compounds",
+    title: "Adventise | Local SEO & Google Maps Growth",
     description:
-      "Full-funnel strategy, creative, and media built for measurable revenue growth.",
+      "Local SEO, Google Business Profile optimization, and conversion-focused websites for service businesses.",
   },
   robots: {
     index: true,

@@ -13,8 +13,9 @@ export default function SiteFooter() {
             <span className="font-display">Adventise</span>
           </div>
           <p className="text-sm text-slate">
-            Adventise is a performance marketing agency helping ambitious brands
-            compound revenue through strategy, creative, and media.
+            Adventise helps local businesses grow through Google Business
+            Profile optimization, local SEO, and websites built to generate
+            more calls and quote requests.
           </p>
           <div className="text-sm font-semibold text-ink">
             hello@adventise.com
