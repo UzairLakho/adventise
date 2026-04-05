@@ -41,6 +41,11 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
                 description={service.hero.subtitle}
               />
               <p className="text-base text-slate">{service.summary}</p>
+              <div className="space-y-4 text-sm text-slate">
+                {service.intro.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
               <div className="flex flex-wrap gap-4">
                 <Button href="/#audit-form">Get a free audit</Button>
                 <Button href="/contact" variant="secondary">
@@ -50,13 +55,13 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
             </div>
             <div className="rounded-[32px] border border-line bg-white p-8 shadow-soft">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
-                What this service is built to improve
+                Best fit
               </p>
               <ul className="mt-4 space-y-3 text-sm text-ink">
-                {service.outcomes.map((outcome) => (
-                  <li key={outcome} className="flex items-start gap-3">
+                {service.idealFor.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
                     <span className="mt-1 h-2 w-2 rounded-full bg-ember" />
-                    <span>{outcome}</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -66,16 +71,58 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
-            <SectionHeading
-              eyebrow="Deliverables"
-              title="What a focused local sprint usually includes"
-              description="The work stays practical and tied to the actual bottleneck, not a bloated checklist."
-            />
+        <SectionHeading
+          eyebrow="Common Problems"
+          title="Signs this is probably the bottleneck"
+          description="If these issues feel familiar, this service is usually worth prioritizing."
+        />
+        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {service.commonIssues.map((issue) => (
+            <div key={issue} className="rounded-3xl border border-line bg-white p-6 shadow-soft">
+              <p className="text-sm text-ink">{issue}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-sand">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <SectionHeading
+            eyebrow="What We Actually Do"
+            title={`How we approach ${service.title.toLowerCase()}`}
+            description="The work stays focused on the local changes that are most likely to improve visibility, trust, and lead flow."
+          />
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {service.workstreams.map((item) => (
+              <div key={item.title} className="rounded-3xl border border-line bg-white p-6 shadow-soft">
+                <h3 className="text-xl font-semibold text-ink">{item.title}</h3>
+                <p className="mt-3 text-sm text-slate">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-[32px] border border-line bg-white p-8 shadow-soft">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
+              What this service is built to improve
+            </p>
+            <ul className="mt-4 space-y-3 text-sm text-ink">
+              {service.outcomes.map((outcome) => (
+                <li key={outcome} className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-ember" />
+                  <span>{outcome}</span>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="rounded-[32px] border border-line bg-white p-8 shadow-soft">
-            <ul className="space-y-3 text-sm text-ink">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
+              What is usually included
+            </p>
+            <ul className="mt-4 space-y-3 text-sm text-ink">
               {service.deliverables.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="mt-1 h-2 w-2 rounded-full bg-mint" />
@@ -87,31 +134,18 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
         </div>
       </section>
 
-      <section className="bg-sand">
+      <section className="bg-ivory">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <SectionHeading
-            eyebrow="Process"
-            title="A local-growth workflow built around the next bottleneck"
-            description="We start by identifying where visibility or trust is leaking, then concentrate the work there first."
+            eyebrow="FAQ"
+            title={`Common questions about ${service.title.toLowerCase()}`}
+            description="A few quick answers to the questions that usually come up before local businesses commit to this kind of work."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {[
-              {
-                title: "Audit",
-                text: "Review your profile, website, service-area signals, and local competitors to see what is suppressing visibility or conversion.",
-              },
-              {
-                title: "Fix",
-                text: "Implement the changes most likely to improve your local presence, trust signals, and ability to turn visits into calls.",
-              },
-              {
-                title: "Expand",
-                text: "Once the base is stronger, extend what is working into more services, more cities, and better long-term local authority.",
-              },
-            ].map((step) => (
-              <div key={step.title} className="rounded-3xl border border-line bg-white p-6">
-                <h3 className="text-lg font-semibold text-ink">{step.title}</h3>
-                <p className="mt-2 text-sm text-slate">{step.text}</p>
+            {service.faqs.map((faq) => (
+              <div key={faq.question} className="rounded-3xl border border-line bg-white p-6 shadow-soft">
+                <h3 className="text-base font-semibold text-ink">{faq.question}</h3>
+                <p className="mt-3 text-sm text-slate">{faq.answer}</p>
               </div>
             ))}
           </div>
