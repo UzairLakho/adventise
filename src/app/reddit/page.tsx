@@ -46,29 +46,38 @@ const auditValue = [
   },
 ];
 
-const sampleTestimonials = [
+const trustPoints = [
   {
-    quote:
-      "This was the first audit I got that actually showed me why the other roofers were beating us on Maps instead of throwing random SEO words at me.",
-    name: "Sample roofer-style quote",
+    title: "Built for contractors, not marketing tourists",
+    text: "This page is for contractors who are busy, skeptical, and tired of vague marketing talk. The goal is simple: show you what is costing you calls.",
   },
   {
-    quote:
-      "They pointed out exactly where the website was leaking calls on mobile. We fixed that first instead of wasting time on stuff that did not matter.",
-    name: "Sample HVAC-style quote",
+    title: "No generic tool printout",
+    text: "The audit is meant to be useful. You should come away knowing what is broken, what a competitor is doing better, and what to fix first.",
   },
   {
-    quote:
-      "No fluff. Just here is what is wrong, here is what your competitors are doing better, and here is what to fix if you want more booked jobs.",
-    name: "Sample plumbing-style quote",
+    title: "Works even if your setup is messy",
+    text: "No website yet? Weak GBP? Old site? Thin service pages? We can still tell you where the real bottleneck is and what the smartest next move looks like.",
   },
 ];
 
-const proofVisuals = [
-  "Geo-grid screenshot showing where you are strong, weak, or invisible",
-  "Google Maps comparison screenshot against 2 or 3 nearby competitors",
-  "Mobile website screenshot with call-path problems marked up",
-  "GBP screenshot showing category, review, and service gaps",
+const auditAssets = [
+  {
+    title: "Geo-grid visibility snapshot",
+    text: "A visual look at where you show up, where you disappear, and how patchy your Maps visibility is around your service area.",
+  },
+  {
+    title: "Google Maps competitor comparison",
+    text: "A side-by-side look at what the companies above you are doing better in their profile, reviews, or local setup.",
+  },
+  {
+    title: "Website call-path check",
+    text: "A quick review of where your site is making people hesitate, bounce, or fail to call on mobile.",
+  },
+  {
+    title: "Fix-first action list",
+    text: "A straight list of what to do first, what can wait, and where you are most likely to get the next lift in calls.",
+  },
 ];
 
 const quickTrust = [
@@ -311,32 +320,49 @@ export default async function RedditAuditPage({
               Trust and proof
             </p>
             <h2 className="text-3xl font-semibold text-ink sm:text-4xl">
-              What to put here to make this believable fast
+              Why this offer makes sense for contractors
             </h2>
             <p className="max-w-3xl text-sm text-slate sm:text-base">
-              The sample quotes below are placeholders written in contractor
-              language on purpose. Replace them with real client quotes and
-              screenshots as soon as you have them.
+              This is meant to feel like a useful field check, not a polished
+              sales trap. The audit should leave you with a clear read on where
+              jobs are slipping away.
             </p>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-3">
-            {sampleTestimonials.map((item) => (
-              <div key={item.name} className="rounded-3xl border border-line bg-white p-6 shadow-soft">
-                <p className="text-sm text-ink">&ldquo;{item.quote}&rdquo;</p>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate">
-                  {item.name}
-                </p>
+            {trustPoints.map((item) => (
+              <div key={item.title} className="rounded-3xl border border-line bg-white p-6 shadow-soft">
+                <h3 className="text-lg font-semibold text-ink">{item.title}</h3>
+                <p className="mt-3 text-sm text-slate">{item.text}</p>
               </div>
             ))}
           </div>
 
           <div className="rounded-[32px] border border-line bg-white p-8 shadow-soft">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
-              Visual proof to use on this page
+              What you should expect inside the audit
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
-              {proofVisuals.map((item) => (
+              {auditAssets.map((item) => (
+                <div key={item.title} className="rounded-2xl border border-line bg-ivory px-5 py-5">
+                  <h3 className="text-sm font-semibold text-ink">{item.title}</h3>
+                  <p className="mt-2 text-sm text-slate">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[32px] border border-line bg-white p-8 shadow-soft">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
+              What we are looking for
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {[
+                "Why a weaker competitor is showing up above you in Google Maps",
+                "Why your profile is not turning views into calls",
+                "Why your website is leaking mobile leads",
+                "Why your service pages are not backing up the markets you want to win",
+              ].map((item) => (
                 <div key={item} className="rounded-2xl border border-line bg-ivory px-5 py-5">
                   <p className="text-sm font-semibold text-ink">{item}</p>
                 </div>
