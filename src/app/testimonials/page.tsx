@@ -24,7 +24,7 @@ export default function TestimonialsPage() {
         <div className="grid gap-6 lg:grid-cols-3">
           {testimonials.map((item) => (
             <div key={item.name} className="rounded-3xl border border-line bg-white p-6 shadow-soft">
-              <p className="text-sm text-ink">"{item.quote}"</p>
+              <p className="text-sm text-ink">&ldquo;{item.quote}&rdquo;</p>
               <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate">
                 {item.name} - {item.role}
               </p>
@@ -39,7 +39,7 @@ export default function TestimonialsPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-mint">
               Ready to start
             </p>
-            <h2 className="text-3xl font-semibold">Let's map your growth plan.</h2>
+            <h2 className="text-3xl font-semibold">Let&apos;s map your growth plan.</h2>
             <p className="text-sm text-white/80">
               Book a strategy call and we will outline the fastest path to impact.
             </p>

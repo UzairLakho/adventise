@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button, Card, SectionHeading } from "@/components/ui";
+import { SeoAuditForm } from "@/components/seo-audit-form";
 import { caseStudies, faqs, services, stats, testimonials } from "@/lib/site-data";
 
 export default function Home() {
@@ -44,42 +45,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="rounded-[32px] border border-line bg-white p-8 shadow-soft">
-            <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
-                  Growth Plan Snapshot
-                </p>
-                <span className="rounded-full bg-ink px-3 py-1 text-xs font-semibold text-white">
-                  90 days
-                </span>
-              </div>
-              <div className="space-y-4">
-                <div className="rounded-2xl border border-line bg-sand p-4">
-                  <p className="text-sm font-semibold text-ink">
-                    Funnel conversion lift
-                  </p>
-                  <p className="text-3xl font-semibold text-ink">+38%</p>
-                </div>
-                <div className="rounded-2xl border border-line bg-ivory p-4">
-                  <p className="text-sm font-semibold text-ink">
-                    CAC improvement
-                  </p>
-                  <p className="text-3xl font-semibold text-ink">-24%</p>
-                </div>
-                <div className="rounded-2xl border border-line bg-ivory p-4">
-                  <p className="text-sm font-semibold text-ink">
-                    Qualified pipeline
-                  </p>
-                  <p className="text-3xl font-semibold text-ink">2.6x</p>
-                </div>
-              </div>
-              <p className="text-xs text-slate">
-                Benchmarks are illustrative. We align targets to your unit
-                economics in week one.
-              </p>
-            </div>
-          </div>
+          <SeoAuditForm />
         </div>
       </section>
 
@@ -206,7 +172,7 @@ export default function Home() {
           <div className="space-y-6">
             {testimonials.map((item) => (
               <div key={item.name} className="rounded-3xl border border-line bg-white p-6">
-                <p className="text-sm text-ink">"{item.quote}"</p>
+                <p className="text-sm text-ink">&ldquo;{item.quote}&rdquo;</p>
                 <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate">
                   {item.name} - {item.role}
                 </p>
@@ -268,4 +234,3 @@ export default function Home() {
     </div>
   );
 }
-

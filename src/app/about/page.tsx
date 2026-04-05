@@ -84,7 +84,7 @@ export default function AboutPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-mint">
               Work with us
             </p>
-            <h2 className="text-3xl font-semibold">Let's build your growth engine.</h2>
+            <h2 className="text-3xl font-semibold">Let&apos;s build your growth engine.</h2>
             <p className="text-sm text-white/80">
               Talk to our team about your goals, channels, and next milestones.
             </p>

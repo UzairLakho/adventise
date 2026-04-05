@@ -6,15 +6,41 @@ export const metadata: Metadata = {
   description: "Talk to Adventise about your growth goals.",
 };
 
-export default function ContactPage() {
+type SearchParamValue = string | string[] | undefined;
+
+function getSearchParam(value: SearchParamValue) {
+  if (Array.isArray(value)) {
+    return value[0] ?? "";
+  }
+
+  return value ?? "";
+}
+
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams?: Promise<Record<string, SearchParamValue>>;
+}) {
+  const params = searchParams ? await searchParams : {};
+  const intent = getSearchParam(params.intent);
+  const email = getSearchParam(params.email);
+  const company = getSearchParam(params.company);
+  const goals = getSearchParam(params.goals);
+  const website = getSearchParam(params.website);
+  const isSeoAudit = intent === "seo-audit";
+
   return (
     <div>
       <section className="bg-noise">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <SectionHeading
             eyebrow="Contact"
-            title="Tell us where you want to grow"
-            description="Share a few details and we will come back with a tailored plan."
+            title={isSeoAudit ? "Claim your free SEO audit" : "Tell us where you want to grow"}
+            description={
+              isSeoAudit
+                ? "We already have your audit request. Add any extra context below and we will come back with a tailored review."
+                : "Share a few details and we will come back with a tailored plan."
+            }
           />
         </div>
       </section>
@@ -22,6 +48,12 @@ export default function ContactPage() {
       <section className="mx-auto max-w-6xl px-6 pb-20">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <form className="rounded-3xl border border-line bg-white p-8 shadow-soft">
+            {isSeoAudit ? (
+              <div className="mb-6 rounded-2xl border border-ember/30 bg-sand px-4 py-3 text-sm text-ink">
+                SEO audit request noted. Tell us a bit more and we will tailor
+                the review to your site.
+              </div>
+            ) : null}
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="flex flex-col gap-2 text-sm font-semibold text-ink">
                 First name
@@ -46,6 +78,7 @@ export default function ContactPage() {
                 <input
                   type="email"
                   name="email"
+                  defaultValue={email}
                   className="rounded-2xl border border-line px-4 py-3 text-sm"
                   placeholder="you@company.com"
                 />
@@ -55,8 +88,19 @@ export default function ContactPage() {
                 <input
                   type="text"
                   name="company"
+                  defaultValue={company}
                   className="rounded-2xl border border-line px-4 py-3 text-sm"
                   placeholder="Company name"
+                />
+              </label>
+              <label className="flex flex-col gap-2 text-sm font-semibold text-ink sm:col-span-2">
+                Website
+                <input
+                  type="url"
+                  name="website"
+                  defaultValue={website}
+                  className="rounded-2xl border border-line px-4 py-3 text-sm"
+                  placeholder="https://yourcompany.com"
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm font-semibold text-ink sm:col-span-2">
@@ -64,6 +108,7 @@ export default function ContactPage() {
                 <textarea
                   name="goals"
                   rows={4}
+                  defaultValue={goals}
                   className="rounded-2xl border border-line px-4 py-3 text-sm"
                   placeholder="Pipeline growth, CAC targets, launch timeline"
                 />

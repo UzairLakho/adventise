@@ -70,7 +70,7 @@ export default function CaseStudiesPage() {
               Next steps
             </p>
             <h2 className="text-3xl font-semibold">
-              Let's build a case study with your brand.
+              Let&apos;s build a case study with your brand.
             </h2>
             <p className="text-sm text-white/80">
               Share your goals and we will put a measurable plan together.
