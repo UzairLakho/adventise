@@ -25,8 +25,10 @@ export function SeoAuditForm() {
           </div>
         </div>
 
-        <form action="/contact" method="get" className="space-y-4">
+        <form action="/api/contact" method="post" className="space-y-4">
           <input type="hidden" name="intent" value="seo-audit" />
+          <input type="hidden" name="source" value="homepage-seo-audit" />
+          <input type="hidden" name="redirectTo" value="/contact" />
 
           <label className="flex flex-col gap-2 text-sm font-semibold text-ink">
             Website URL
@@ -55,6 +57,7 @@ export function SeoAuditForm() {
               <input
                 type="text"
                 name="company"
+                required
                 placeholder="Company name"
                 className={fieldClasses}
               />
@@ -63,12 +66,13 @@ export function SeoAuditForm() {
 
           <label className="flex flex-col gap-2 text-sm font-semibold text-ink">
             What should we audit first?
-            <input
-              type="text"
-              name="goals"
-              placeholder="Rankings drop, technical SEO, local visibility, content gaps"
-              className={fieldClasses}
-            />
+              <input
+                type="text"
+                name="goals"
+                required
+                placeholder="Rankings drop, technical SEO, local visibility, content gaps"
+                className={fieldClasses}
+              />
           </label>
 
           <button

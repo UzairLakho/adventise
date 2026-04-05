@@ -23,11 +23,16 @@ export default async function ContactPage({
 }) {
   const params = searchParams ? await searchParams : {};
   const intent = getSearchParam(params.intent);
+  const status = getSearchParam(params.status);
   const email = getSearchParam(params.email);
   const company = getSearchParam(params.company);
   const goals = getSearchParam(params.goals);
   const website = getSearchParam(params.website);
+  const firstName = getSearchParam(params.firstName);
+  const lastName = getSearchParam(params.lastName);
   const isSeoAudit = intent === "seo-audit";
+  const isSuccess = status === "success";
+  const isError = status === "error";
 
   return (
     <div>
@@ -47,8 +52,30 @@ export default async function ContactPage({
 
       <section className="mx-auto max-w-6xl px-6 pb-20">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <form className="rounded-3xl border border-line bg-white p-8 shadow-soft">
-            {isSeoAudit ? (
+          <form
+            action="/api/contact"
+            method="post"
+            className="rounded-3xl border border-line bg-white p-8 shadow-soft"
+          >
+            <input type="hidden" name="intent" value={isSeoAudit ? "seo-audit" : "contact"} />
+            <input type="hidden" name="source" value="contact-page" />
+            <input type="hidden" name="redirectTo" value="/contact" />
+
+            {isSuccess ? (
+              <div className="mb-6 rounded-2xl border border-mint/40 bg-mint/10 px-4 py-3 text-sm text-ink">
+                {isSeoAudit
+                  ? "Your SEO audit request is in. We will review your site and email you shortly."
+                  : "Your request has been sent. We will get back to you within 1-2 business days."}
+              </div>
+            ) : null}
+
+            {isError ? (
+              <div className="mb-6 rounded-2xl border border-ember/30 bg-sand px-4 py-3 text-sm text-ink">
+                We could not send your request just yet. Please review the form and try again.
+              </div>
+            ) : null}
+
+            {isSeoAudit && !isSuccess ? (
               <div className="mb-6 rounded-2xl border border-ember/30 bg-sand px-4 py-3 text-sm text-ink">
                 SEO audit request noted. Tell us a bit more and we will tailor
                 the review to your site.
@@ -60,6 +87,7 @@ export default async function ContactPage({
                 <input
                   type="text"
                   name="firstName"
+                  defaultValue={firstName}
                   className="rounded-2xl border border-line px-4 py-3 text-sm"
                   placeholder="Jordan"
                 />
@@ -69,6 +97,7 @@ export default async function ContactPage({
                 <input
                   type="text"
                   name="lastName"
+                  defaultValue={lastName}
                   className="rounded-2xl border border-line px-4 py-3 text-sm"
                   placeholder="Lee"
                 />
@@ -78,6 +107,7 @@ export default async function ContactPage({
                 <input
                   type="email"
                   name="email"
+                  required
                   defaultValue={email}
                   className="rounded-2xl border border-line px-4 py-3 text-sm"
                   placeholder="you@company.com"
@@ -88,6 +118,7 @@ export default async function ContactPage({
                 <input
                   type="text"
                   name="company"
+                  required
                   defaultValue={company}
                   className="rounded-2xl border border-line px-4 py-3 text-sm"
                   placeholder="Company name"
@@ -98,6 +129,7 @@ export default async function ContactPage({
                 <input
                   type="url"
                   name="website"
+                  required={isSeoAudit}
                   defaultValue={website}
                   className="rounded-2xl border border-line px-4 py-3 text-sm"
                   placeholder="https://yourcompany.com"
@@ -108,6 +140,7 @@ export default async function ContactPage({
                 <textarea
                   name="goals"
                   rows={4}
+                  required
                   defaultValue={goals}
                   className="rounded-2xl border border-line px-4 py-3 text-sm"
                   placeholder="Pipeline growth, CAC targets, launch timeline"
