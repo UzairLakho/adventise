@@ -29,10 +29,12 @@ export default function RedditThankYouPage() {
               </p>
               <p>
                 If you want to speed this up and turn it into a quick discovery
-                call, email <span className="font-semibold text-ink">hello@adventise.com</span> with
-                your phone number, your business name, and two time windows
-                that work for you. Put <span className="font-semibold text-ink">Reddit Audit Call</span> in
-                the subject line.
+                call, email{" "}
+                <span className="font-semibold text-ink">hello@adventise.com</span>{" "}
+                with your phone number, your business name, and two time
+                windows that work for you. Put{" "}
+                <span className="font-semibold text-ink">Reddit Audit Call</span>{" "}
+                in the subject line.
               </p>
             </div>
           </div>
@@ -43,12 +45,12 @@ export default function RedditThankYouPage() {
             </p>
             <div className="mt-4 space-y-3 text-sm text-ink">
               <p>
-                “Appreciate you sending that over. We are going to look at your
-                Google Maps setup, your website, and where competitors are
+                &ldquo;Appreciate you sending that over. We are going to look at
+                your Google Maps setup, your website, and where competitors are
                 beating you right now. If there is a real opportunity, we will
                 show you the leak first, then the fastest fix. If you want to
                 walk through it live, send us your number and two time windows
-                and we will try to line up a quick call.” 
+                and we will try to line up a quick call.&rdquo;
               </p>
             </div>
             <a

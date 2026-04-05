@@ -71,6 +71,12 @@ const proofVisuals = [
   "GBP screenshot showing category, review, and service gaps",
 ];
 
+const quickTrust = [
+  "Built for contractors",
+  "No generic PDF dump",
+  "No-pressure next steps",
+];
+
 export default async function RedditAuditPage({
   searchParams,
 }: {
@@ -91,55 +97,12 @@ export default async function RedditAuditPage({
       <section className="relative overflow-hidden">
         <div className="absolute -left-20 top-10 h-64 w-64 rounded-full bg-ember/20 blur-3xl" />
         <div className="absolute -right-12 top-0 h-72 w-72 rounded-full bg-mint/20 blur-3xl" />
-        <div className="mx-auto max-w-6xl px-6 pb-16 pt-14 lg:pb-20 lg:pt-20">
+        <div className="mx-auto max-w-6xl px-6 pb-16 pt-10 lg:pb-20 lg:pt-20">
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <span className="inline-flex items-center rounded-full border border-line bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate">
-                  For r/contractorsUS members
-                </span>
-                <h1 className="max-w-3xl text-4xl font-semibold text-ink sm:text-5xl lg:text-6xl">
-                  Losing jobs to worse contractors because they show up first on
-                  Google?
-                </h1>
-                <p className="max-w-2xl text-lg text-slate sm:text-xl">
-                  We do a free Google Maps and website audit for contractors so
-                  you can see exactly why weaker competitors are outranking you,
-                  why phones are not ringing enough, and what to fix first.
-                </p>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-3">
-                {[
-                  "Google Maps and GBP review",
-                  "Website call-path teardown",
-                  "Straight fix-first action list",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl border border-line bg-white/90 px-4 py-4 text-sm font-semibold text-ink shadow-soft"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-
-              <div className="rounded-[28px] border border-line bg-white/90 p-6 shadow-soft">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
-                  What this is really for
-                </p>
-                <ul className="mt-4 space-y-3 text-sm text-ink">
-                  {painBullets.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <span className="mt-1 h-2 w-2 rounded-full bg-ember" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div id="reddit-audit-form" className="rounded-[32px] border border-line bg-white p-6 shadow-soft sm:p-8">
+            <div
+              id="reddit-audit-form"
+              className="rounded-[32px] border border-line bg-white p-6 shadow-soft sm:p-8 lg:order-2"
+            >
               <div className="space-y-5">
                 <div className="space-y-2">
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
@@ -149,10 +112,18 @@ export default async function RedditAuditPage({
                     We will show you where jobs are leaking.
                   </h2>
                   <p className="text-sm text-slate">
-                    This is not a generic report. We look at your Google Maps
-                    position, your profile, your website, and where the next
-                    calls are being lost.
+                    Quick, straight, and built for contractors. We look at your
+                    Google Maps position, your profile, your website, and where
+                    the next calls are being lost.
                   </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2 text-xs font-semibold text-ink">
+                  {quickTrust.map((item) => (
+                    <span key={item} className="rounded-full bg-ivory px-3 py-2">
+                      {item}
+                    </span>
+                  ))}
                 </div>
 
                 {isError ? (
@@ -253,6 +224,53 @@ export default async function RedditAuditPage({
                 </form>
               </div>
             </div>
+
+            <div className="space-y-8 lg:order-1">
+              <div className="space-y-4">
+                <span className="inline-flex items-center rounded-full border border-line bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate">
+                  For r/contractorsUS members
+                </span>
+                <h1 className="max-w-3xl text-4xl font-semibold text-ink sm:text-5xl lg:text-6xl">
+                  Worse contractors are beating you on Google and taking the
+                  calls.
+                </h1>
+                <p className="max-w-2xl text-lg text-slate sm:text-xl">
+                  We do a free Google Maps, Google Business Profile, and
+                  website audit for contractors so you can see exactly why
+                  weaker competitors are outranking you, why phones are not
+                  ringing enough, and what to fix first.
+                </p>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-3">
+                {[
+                  "Google Maps and GBP review",
+                  "Website call-path teardown",
+                  "Straight fix-first action list",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-line bg-white/90 px-4 py-4 text-sm font-semibold text-ink shadow-soft"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+
+              <div className="rounded-[28px] border border-line bg-white/90 p-6 shadow-soft">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
+                  What this is really for
+                </p>
+                <ul className="mt-4 space-y-3 text-sm text-ink">
+                  {painBullets.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span className="mt-1 h-2 w-2 rounded-full bg-ember" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -293,12 +311,12 @@ export default async function RedditAuditPage({
               Trust and proof
             </p>
             <h2 className="text-3xl font-semibold text-ink sm:text-4xl">
-              What this should sound and look like
+              What to put here to make this believable fast
             </h2>
             <p className="max-w-3xl text-sm text-slate sm:text-base">
-              The sample quotes below are written in contractor language on
-              purpose. Replace them with your real proof as you collect
-              screenshots, call wins, and client feedback.
+              The sample quotes below are placeholders written in contractor
+              language on purpose. Replace them with real client quotes and
+              screenshots as soon as you have them.
             </p>
           </div>
 
