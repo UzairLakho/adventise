@@ -123,6 +123,20 @@ function formatNotesForHtml(value: string) {
   return escapeHtml(value || "Not provided").replaceAll("\n", "<br />");
 }
 
+function normalizeWebsite(value: string) {
+  const trimmed = value.replace(/\s+/g, "");
+
+  if (!trimmed) {
+    return "";
+  }
+
+  if (/^[a-z][a-z\d+.-]*:/i.test(trimmed)) {
+    return trimmed;
+  }
+
+  return `https://${trimmed}`;
+}
+
 function buildMailtoHref(to: string, subject: string, body?: string) {
   const params = new URLSearchParams();
 
@@ -675,7 +689,7 @@ export async function POST(request: Request) {
   const trade = getField(formData, "trade");
   const location = getField(formData, "location");
   const auditType = getField(formData, "auditType");
-  const website = getField(formData, "website");
+  const website = normalizeWebsite(getField(formData, "website"));
   const goals = getField(formData, "goals");
   const honeypot = getField(formData, "faxNumber");
 

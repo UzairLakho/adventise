@@ -159,11 +159,15 @@ export default async function ContactPage({
               <label className="flex flex-col gap-2 text-sm font-semibold text-ink sm:col-span-2">
                 Website or Google Business Profile URL
                 <input
-                  type="url"
+                  type="text"
                   name="website"
+                  inputMode="url"
+                  autoCapitalize="none"
+                  autoCorrect="off"
+                  spellCheck={false}
                   defaultValue={website}
                   className="rounded-2xl border border-line px-4 py-3 text-sm"
-                  placeholder="https://yourcompany.com or your Google profile link"
+                  placeholder="yourcompany.com or your Google profile link"
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm font-semibold text-ink sm:col-span-2">

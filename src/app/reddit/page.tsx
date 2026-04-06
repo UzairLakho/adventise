@@ -198,10 +198,14 @@ export default async function RedditAuditPage({
                   <label className="flex flex-col gap-2 text-sm font-semibold text-ink">
                     Website or Google Business Profile link
                     <input
-                      type="url"
+                      type="text"
                       name="website"
+                      inputMode="url"
+                      autoCapitalize="none"
+                      autoCorrect="off"
+                      spellCheck={false}
                       defaultValue={website}
-                      placeholder="Optional if you have one"
+                      placeholder="yourcompany.com or your Google profile link"
                       className="w-full rounded-2xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-slate/70 focus:border-ember"
                     />
                   </label>

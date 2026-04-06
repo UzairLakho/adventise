@@ -133,10 +133,14 @@ export function SeoAuditForm({
           <label className="flex flex-col gap-2 text-sm font-semibold text-ink">
             Website or Google Business Profile URL
             <input
-              type="url"
+              type="text"
               name="website"
+              inputMode="url"
+              autoCapitalize="none"
+              autoCorrect="off"
+              spellCheck={false}
               defaultValue={defaults?.website}
-              placeholder="Optional if you already have one"
+              placeholder="yourcompany.com or your Google profile link"
               className={fieldClasses}
             />
           </label>
