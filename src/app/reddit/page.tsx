@@ -82,8 +82,6 @@ const auditAssets = [
 
 const quickTrust = [
   "Built for contractors",
-  "No generic PDF dump",
-  "No-pressure next steps",
 ];
 
 export default async function RedditAuditPage({
