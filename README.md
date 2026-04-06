@@ -18,6 +18,21 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## Form Email Setup
+
+The contact and audit forms submit to `src/app/api/contact/route.ts` and send email through Resend.
+
+Add these variables in your local or hosting environment:
+
+```bash
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxx
+CONTACT_TO_EMAIL=hello@adventise.com
+CONTACT_FROM_EMAIL=Adventise Website <hello@adventise.com>
+CONTACT_REPLY_TO_EMAIL=hello@adventise.com
+```
+
+`CONTACT_FROM_EMAIL` must use a sender address on a domain verified inside Resend before production email delivery will succeed.
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
