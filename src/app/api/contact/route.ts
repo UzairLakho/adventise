@@ -182,15 +182,26 @@ function buildNotificationText(intent: Intent, source: string, subject: string, 
 }
 
 function buildConfirmationSubject(intent: Intent) {
-  if (intent === "contact") {
-    return "We received your message";
+    if (intent === "contact") {
+    return "We received your message - quick reply requested";
   }
 
   if (intent === "seo-audit") {
-    return "Your Adventise SEO audit request is in";
+    return "Your Adventise SEO audit request is in - quick reply requested";
   }
 
-  return "Your Adventise local audit request is in";
+  return "Your Adventise local audit request is in - quick reply requested";
+}
+
+function buildReplyRequest(intent: Intent, fields: FormFields) {
+  if (intent === "contact") {
+    return "Please reply with \"confirmed\" so we know this reached the right inbox.";
+  }
+
+  const serviceHint = fields.trade || "main service";
+  const locationHint = fields.location || "main city";
+
+  return `Please reply with "confirmed" plus your ${serviceHint} and ${locationHint} so we can prioritize the right market review.`;
 }
 
 function buildConfirmationHtml(intent: Intent, fields: FormFields) {
@@ -205,12 +216,17 @@ function buildConfirmationHtml(intent: Intent, fields: FormFields) {
       : "We will take a look at your market, service area, website, and Google presence, then follow up with the clearest next step.";
 
   const greeting = fields.firstName || fields.company || "there";
+  const replyRequest = buildReplyRequest(intent, fields);
 
   return `
     <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #0b1f2a;">
       <p style="margin: 0 0 16px;">Hi ${escapeHtml(greeting)},</p>
       <p style="margin: 0 0 16px;">${escapeHtml(intro)}</p>
       <p style="margin: 0 0 16px;">${escapeHtml(nextStep)}</p>
+      <div style="margin: 0 0 16px; border: 1px solid #f08a62; border-radius: 16px; padding: 16px 18px; background: #fff4eb;">
+        <p style="margin: 0 0 8px; font-weight: 700;">Quick confirmation</p>
+        <p style="margin: 0;">${escapeHtml(replyRequest)}</p>
+      </div>
       <div style="margin: 24px 0; border: 1px solid #d8e0e6; border-radius: 16px; padding: 20px; background: #fbf7ef;">
         <p style="margin: 0 0 12px; font-weight: 700;">What we received</p>
         <p style="margin: 0 0 8px;"><strong>Business:</strong> ${escapeHtml(fields.company || "Not provided")}</p>
@@ -236,12 +252,16 @@ function buildConfirmationText(intent: Intent, fields: FormFields) {
     intent === "contact"
       ? "We will review what you shared and reply with the clearest next step for your business."
       : "We will take a look at your market, service area, website, and Google presence, then follow up with the clearest next step.";
+  const replyRequest = buildReplyRequest(intent, fields);
 
   return [
     `Hi ${fields.firstName || fields.company || "there"},`,
     "",
     intro,
     nextStep,
+    "",
+    "Quick confirmation",
+    replyRequest,
     "",
     "What we received",
     `Business: ${fields.company || "Not provided"}`,
