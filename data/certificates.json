@@ -64,4 +64,16 @@
     "trainingLocation": "Sukkur, Pakistan",
     "status": "Valid"
   }
+   ,
+
+ {
+    "id": "ADV-MS-2025-02207",
+    "name": "Umair Ahmed Lakho",
+    "course": "CIT (MS Office, Office Automation & Professional Typing)",
+    "courseCode": "ADV-MS-31",
+    "issueDate": "2025-07-01",
+    "duration": "06 Months",
+    "trainingLocation": "Sukkur, Pakistan",
+    "status": "Valid"
+  }
 ]
