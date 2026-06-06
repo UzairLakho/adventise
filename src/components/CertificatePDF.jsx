@@ -273,7 +273,7 @@ export default function CertificatePDF({
               <View style={styles.skillsBox}>
                 <Text style={styles.skillsHeading}>Skills Section</Text>
                 <Text style={styles.skillsText}>
-                  The training focused on practical skills in: Local SEO, Google My Business Optimization & Citations Training.
+                  The training focused on practical skills in: Computer Fundamentals, MS Office Applications (Word, Excel, PowerPoint), Internet & Email Usage, Office Automation, Data Management, Professional Typing, and Digital Productivity Tools.
                 </Text>
               </View>
 
@@ -341,7 +341,7 @@ export default function CertificatePDF({
               </View>
               <Text style={styles.legalFooter}>
                 Issued by ADVENTISE, having its office at
-                Adventise House, M-09, Dolphin Tower, Shalimar Road, Sukkur,
+                Adventise House, M-16, Dolphin Tower, Shalimar Road, Sukkur,
                 65200.
               </Text>
             </View>
