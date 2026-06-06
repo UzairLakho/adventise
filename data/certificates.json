@@ -52,4 +52,16 @@
     "trainingLocation": "Sukkur, Pakistan",
     "status": "Valid"
   }
+    ,
+
+ {
+    "id": "ADV-MS-2025-02204",
+    "name": "Maria Mahar",
+    "course": "CIT (MS Office Productivity, Office Automation & Typing Mastery)",
+    "courseCode": "ADV-MS-31",
+    "issueDate": "2025-07-01",
+    "duration": "06 Months",
+    "trainingLocation": "Sukkur, Pakistan",
+    "status": "Valid"
+  }
 ]
