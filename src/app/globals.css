@@ -16,18 +16,18 @@
 }
 
 @theme {
-  --color-ink: var(--ink);
-  --color-ink-2: var(--ink-2);
-  --color-ivory: var(--ivory);
-  --color-sand: var(--sand);
-  --color-ember: var(--ember);
-  --color-ember-dark: var(--ember-dark);
-  --color-mint: var(--mint);
-  --color-slate: var(--slate);
-  --color-line: var(--line);
-  --color-glow: var(--glow);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-ink: #0b1f2a;
+  --color-ink-2: #142b3a;
+  --color-ivory: #f8f5f0;
+  --color-sand: #f2e8dc;
+  --color-ember: #ff6b35;
+  --color-ember-dark: #e45521;
+  --color-mint: #5ee6c0;
+  --color-slate: #5d6b74;
+  --color-line: #d9cbb9;
+  --color-glow: #ffd4b2;
+  --color-background: #f8f5f0;
+  --color-foreground: #0b1f2a;
   --font-sans: var(--font-manrope);
 }
 
