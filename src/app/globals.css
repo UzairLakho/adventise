@@ -15,7 +15,7 @@
   --foreground: var(--ink);
 }
 
-@theme inline {
+@theme {
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-ivory: var(--ivory);
