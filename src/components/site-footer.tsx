@@ -42,6 +42,9 @@ export default function SiteFooter() {
           <Link href="/about" className="block hover:text-ember">
             About
           </Link>
+          <Link href="/founder" className="block hover:text-ember">
+            Founder
+          </Link>
           <Link href="/results" className="block hover:text-ember">
             Results
           </Link>

@@ -17,14 +17,16 @@ export function Button({
   children,
   variant = "primary",
   className = "",
+  id,
 }: {
   href: string;
   children: ReactNode;
   variant?: keyof typeof variants;
   className?: string;
+  id?: string;
 }) {
   return (
-    <Link href={href} className={`${baseButton} ${variants[variant]} ${className}`}>
+    <Link href={href} id={id} className={`${baseButton} ${variants[variant]} ${className}`}>
       {children}
     </Link>
   );

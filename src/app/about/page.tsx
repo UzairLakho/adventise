@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Button, SectionHeading } from "@/components/ui";
 import { values } from "@/lib/site-data";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
@@ -76,6 +77,53 @@ export default function AboutPage() {
                 <p className="mt-2 text-sm text-slate">{value.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-center">
+          <div className="relative mx-auto aspect-square w-full max-w-[280px] overflow-hidden rounded-[32px] border-4 border-line bg-white shadow-soft">
+            <Image
+              src="/uzair-photo.png"
+              alt="Uzair Ahmed Lakho"
+              fill
+              className="object-cover"
+              sizes="(max-w-768px) 100vw, 280px"
+              id="about-founder-image"
+            />
+          </div>
+          <div className="space-y-6">
+            <SectionHeading
+              eyebrow="Founder"
+              title="Uzair Ahmed Lakho"
+              description="Founder & Lead SEO Consultant"
+            />
+            <p className="text-sm text-slate leading-relaxed">
+              Uzair Ahmed Lakho founded Adventise to bridge the gap between service-based businesses and their local customers. Under his leadership, Adventise simplifies local search strategy, helping service providers get real phone calls and quote requests.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2 text-sm">
+              <div className="rounded-2xl border border-line bg-white p-4">
+                <span className="block text-[10px] font-semibold uppercase tracking-wider text-slate">Direct Phone</span>
+                <a href="tel:+923136677628" className="font-semibold text-ink hover:text-ember transition-colors" id="about-founder-phone">+92 313 6677628</a>
+              </div>
+              <div className="rounded-2xl border border-line bg-white p-4">
+                <span className="block text-[10px] font-semibold uppercase tracking-wider text-slate">Direct Email</span>
+                <a href="mailto:uzairlakho16@gmail.com" className="font-semibold text-ink hover:text-ember transition-colors" id="about-founder-email">uzairlakho16@gmail.com</a>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/founder" id="about-founder-profile-btn">View Founder Profile</Button>
+              <a 
+                href="https://www.facebook.com/UzairAhmed2/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-5 py-3 text-sm font-semibold text-ink hover:-translate-y-0.5 hover:border-ember hover:text-ember transition-all"
+                id="about-founder-facebook"
+              >
+                Facebook Profile
+              </a>
+            </div>
           </div>
         </div>
       </section>
