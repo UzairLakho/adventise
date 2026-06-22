@@ -668,7 +668,28 @@ function buildRedirectUrl(
   return url;
 }
 
-function redirectWithStatus(url: URL) {
+function respondWithStatus(
+  request: Request,
+  redirectTo: string,
+  intent: Intent,
+  status: Status,
+  fields?: Record<string, string>,
+  errorMessage?: string,
+) {
+  const acceptHeader = request.headers.get("accept") || "";
+  if (acceptHeader.includes("application/json")) {
+    return NextResponse.json(
+      {
+        status,
+        intent,
+        fields,
+        errorMessage,
+      },
+      { status: status === "success" ? 200 : 400 },
+    );
+  }
+
+  const url = buildRedirectUrl(request, redirectTo, intent, status, fields, errorMessage);
   return NextResponse.redirect(url, { status: 303 });
 }
 
@@ -706,37 +727,34 @@ export async function POST(request: Request) {
   };
 
   if (honeypot) {
-    const redirectUrl = buildRedirectUrl(request, redirectTo, intent, "success");
-    return redirectWithStatus(redirectUrl);
+    return respondWithStatus(request, redirectTo, intent, "success");
   }
 
   const isAuditRequest = intent === "seo-audit" || intent === "local-audit";
 
   if (!email || !company || !goals || (isAuditRequest && (!location || !auditType))) {
-    const redirectUrl = buildRedirectUrl(
+    return respondWithStatus(
       request,
       redirectTo,
       intent,
       "error",
-      fields,
+      fields as unknown as Record<string, string>,
       "Please complete the required fields and try again.",
     );
-    return redirectWithStatus(redirectUrl);
   }
 
   const emailConfig = getEmailConfig();
 
   if (!emailConfig.resend) {
     console.error("RESEND_API_KEY is not configured.");
-    const redirectUrl = buildRedirectUrl(
+    return respondWithStatus(
       request,
       redirectTo,
       intent,
       "error",
-      fields,
+      fields as unknown as Record<string, string>,
       "Email sending is not configured on this deployment. Add RESEND_API_KEY in your hosting environment and redeploy.",
     );
-    return redirectWithStatus(redirectUrl);
   }
 
   const senderName = getSenderName(fields);
@@ -784,22 +802,20 @@ export async function POST(request: Request) {
       console.error("Failed to send submitter confirmation email.", confirmationError);
     }
 
-    const redirectUrl = buildRedirectUrl(request, successRedirectTo, intent, "success");
-    return redirectWithStatus(redirectUrl);
+    return respondWithStatus(request, successRedirectTo, intent, "success");
   } catch (error) {
     console.error("Failed to send contact email.", error);
     const message =
       error instanceof Error
         ? error.message
         : "Resend rejected the request. Please confirm your sender domain, reply-to address, and deployment environment variables.";
-    const redirectUrl = buildRedirectUrl(
+    return respondWithStatus(
       request,
       redirectTo,
       intent,
       "error",
-      fields,
+      fields as unknown as Record<string, string>,
       message,
     );
-    return redirectWithStatus(redirectUrl);
   }
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Button, SectionHeading } from "@/components/ui";
 import { services } from "@/lib/site-data";
+import { Accordion } from "@/components/accordion";
 
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -149,10 +150,7 @@ export default async function ServiceDetail({
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {service.faqs.map((faq) => (
-              <div key={faq.question} className="rounded-3xl border border-line bg-white p-6 shadow-soft">
-                <h3 className="text-base font-semibold text-ink">{faq.question}</h3>
-                <p className="mt-3 text-sm text-slate">{faq.answer}</p>
-              </div>
+              <Accordion key={faq.question} question={faq.question} answer={faq.answer} />
             ))}
           </div>
         </div>

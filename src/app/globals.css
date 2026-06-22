@@ -129,4 +129,13 @@ a {
   .font-display {
     font-family: var(--font-bricolage), system-ui, -apple-system, "Segoe UI", sans-serif;
   }
+  
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 70px rgba(11, 31, 42, 0.16);
+    border-color: rgba(255, 107, 53, 0.4);
+  }
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SectionHeading } from "@/components/ui";
+import ContactForm from "@/components/contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -55,145 +56,21 @@ export default async function ContactPage({
 
       <section className="mx-auto max-w-6xl px-6 pb-20">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <form
-            action="/api/contact"
-            method="post"
-            className="rounded-3xl border border-line bg-white p-8 shadow-soft"
-          >
-            <input type="hidden" name="intent" value={isLocalAudit ? "local-audit" : "contact"} />
-            <input type="hidden" name="source" value="contact-page" />
-            <input type="hidden" name="redirectTo" value="/contact" />
-            <input type="text" name="faxNumber" className="hidden" tabIndex={-1} autoComplete="off" />
-
-            {isSuccess ? (
-              <div className="mb-6 rounded-2xl border border-mint/40 bg-mint/10 px-4 py-3 text-sm text-ink">
-                {isLocalAudit
-                  ? "Your local SEO and Maps audit request is in. We will review your setup and email you shortly."
-                  : "Your request has been sent. We will get back to you within 1-2 business days."}
-              </div>
-            ) : null}
-
-            {isError ? (
-              <div className="mb-6 rounded-2xl border border-ember/30 bg-sand px-4 py-3 text-sm text-ink">
-                {errorMessage ||
-                  "We could not send your request just yet. Please review the form and try again."}
-              </div>
-            ) : null}
-
-            {isLocalAudit && !isSuccess ? (
-              <div className="mb-6 rounded-2xl border border-ember/30 bg-sand px-4 py-3 text-sm text-ink">
-                Audit request noted. Tell us a bit more about your service area,
-                website, or Google Business Profile and we will tailor the
-                review to your local market.
-              </div>
-            ) : null}
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="flex flex-col gap-2 text-sm font-semibold text-ink">
-                First name
-                <input
-                  type="text"
-                  name="firstName"
-                  defaultValue={firstName}
-                  className="rounded-2xl border border-line px-4 py-3 text-sm"
-                  placeholder="Jordan"
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-sm font-semibold text-ink">
-                Last name
-                <input
-                  type="text"
-                  name="lastName"
-                  defaultValue={lastName}
-                  className="rounded-2xl border border-line px-4 py-3 text-sm"
-                  placeholder="Lee"
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-sm font-semibold text-ink sm:col-span-2">
-                Work email
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  defaultValue={email}
-                  className="rounded-2xl border border-line px-4 py-3 text-sm"
-                  placeholder="you@company.com"
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-sm font-semibold text-ink sm:col-span-2">
-                Business name
-                <input
-                  type="text"
-                  name="company"
-                  required
-                  defaultValue={company}
-                  className="rounded-2xl border border-line px-4 py-3 text-sm"
-                  placeholder="Company name"
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-sm font-semibold text-ink sm:col-span-2">
-                Primary city or service area
-                <input
-                  type="text"
-                  name="location"
-                  defaultValue={location}
-                  required={isLocalAudit}
-                  className="rounded-2xl border border-line px-4 py-3 text-sm"
-                  placeholder="Dallas, Fort Worth, or North Dallas"
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-sm font-semibold text-ink sm:col-span-2">
-                Main focus
-                <select
-                  name="auditType"
-                  defaultValue={auditType || "both"}
-                  required={isLocalAudit}
-                  className="rounded-2xl border border-line bg-white px-4 py-3 text-sm"
-                >
-                  <option value="google-maps-gbp">Google Maps / Google Business Profile</option>
-                  <option value="local-seo-website">Local SEO / website leads</option>
-                  <option value="both">Both SEO and Maps</option>
-                  <option value="not-sure">Not sure yet</option>
-                </select>
-              </label>
-              <label className="flex flex-col gap-2 text-sm font-semibold text-ink sm:col-span-2">
-                Website or Google Business Profile URL
-                <input
-                  type="text"
-                  name="website"
-                  inputMode="url"
-                  autoCapitalize="none"
-                  autoCorrect="off"
-                  spellCheck={false}
-                  defaultValue={website}
-                  className="rounded-2xl border border-line px-4 py-3 text-sm"
-                  placeholder="yourcompany.com or your Google profile link"
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-sm font-semibold text-ink sm:col-span-2">
-                What do you want more of?
-                <textarea
-                  name="goals"
-                  rows={4}
-                  required
-                  defaultValue={goals}
-                  className="rounded-2xl border border-line px-4 py-3 text-sm"
-                  placeholder="More calls, more map visibility, more quote requests, better reviews, or a better website"
-                />
-              </label>
-            </div>
-            <div className="mt-6 flex flex-wrap items-center gap-4">
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-ember px-5 py-3 text-sm font-semibold text-white shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:bg-ember-dark"
-              >
-                Submit request
-              </button>
-              <p className="text-xs text-slate">
-                We will reply with the clearest next steps for your market.
-              </p>
-            </div>
-          </form>
+          <ContactForm
+            isLocalAudit={isLocalAudit}
+            initialValues={{
+              firstName,
+              lastName,
+              email,
+              company,
+              location,
+              auditType,
+              website,
+              goals,
+            }}
+            initialStatus={status}
+            initialErrorMessage={errorMessage}
+          />
 
           <div className="space-y-6">
             <div className="rounded-3xl border border-line bg-white p-6 shadow-soft">

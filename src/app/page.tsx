@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Button, SectionHeading } from "@/components/ui";
 import { SeoAuditForm } from "@/components/seo-audit-form";
+import { Accordion } from "@/components/accordion";
 
 export const metadata: Metadata = {
   title: "Local SEO & Google Maps Growth for Local Service Businesses",
@@ -255,7 +256,7 @@ export default async function Home({
         />
         <div className="grid gap-6 md:grid-cols-3">
           {painPoints.map((item) => (
-            <div key={item.title} className="rounded-3xl border border-line bg-white p-6 shadow-soft">
+            <div key={item.title} className="rounded-3xl border border-line bg-white p-6 shadow-soft card-hover">
               <h3 className="text-xl font-semibold text-ink">{item.title}</h3>
               <p className="mt-3 text-sm text-slate">{item.text}</p>
             </div>
@@ -272,7 +273,7 @@ export default async function Home({
           />
           <div className="grid gap-6 md:grid-cols-2">
             {pathways.map((item) => (
-              <div key={item.title} className="rounded-3xl border border-line bg-white p-6 shadow-soft">
+              <div key={item.title} className="rounded-3xl border border-line bg-white p-6 shadow-soft card-hover">
                 <h3 className="text-xl font-semibold text-ink">{item.title}</h3>
                 <p className="mt-3 text-sm text-slate">{item.text}</p>
               </div>
@@ -292,7 +293,7 @@ export default async function Home({
             {auditIncludes.map((item) => (
               <div
                 key={item}
-                className="rounded-2xl border border-line bg-white px-5 py-5 text-sm font-medium text-ink shadow-soft"
+                className="rounded-2xl border border-line bg-white px-5 py-5 text-sm font-medium text-ink shadow-soft card-hover"
               >
                 {item}
               </div>
@@ -310,7 +311,7 @@ export default async function Home({
           />
           <div className="grid gap-6 lg:grid-cols-3">
             {process.map((item) => (
-              <div key={item.title} className="rounded-3xl border border-line bg-white p-6 shadow-soft">
+              <div key={item.title} className="rounded-3xl border border-line bg-white p-6 shadow-soft card-hover">
                 <h3 className="text-xl font-semibold text-ink">{item.title}</h3>
                 <p className="mt-3 text-sm text-slate">{item.text}</p>
               </div>
@@ -328,7 +329,7 @@ export default async function Home({
           />
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {offers.map((item) => (
-              <div key={item.title} className="rounded-3xl border border-line bg-white p-6 shadow-soft">
+              <div key={item.title} className="rounded-3xl border border-line bg-white p-6 shadow-soft card-hover">
                 <h3 className="text-lg font-semibold text-ink">{item.title}</h3>
                 <p className="mt-3 text-sm text-slate">{item.text}</p>
               </div>
@@ -375,10 +376,7 @@ export default async function Home({
           />
           <div className="grid gap-6 md:grid-cols-2">
             {faqs.map((faq) => (
-              <div key={faq.question} className="rounded-3xl border border-line bg-white p-6">
-                <h3 className="text-base font-semibold text-ink">{faq.question}</h3>
-                <p className="mt-2 text-sm text-slate">{faq.answer}</p>
-              </div>
+              <Accordion key={faq.question} question={faq.question} answer={faq.answer} />
             ))}
           </div>
         </div>

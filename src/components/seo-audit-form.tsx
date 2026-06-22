@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, type FormEvent } from "react";
+
 type AuditFormDefaults = {
   auditType?: string;
   company?: string;
@@ -15,13 +19,53 @@ const selectClasses =
 
 export function SeoAuditForm({
   defaults,
-  errorMessage,
-  status,
+  errorMessage: initialErrorMessage,
+  status: initialStatus,
 }: {
   defaults?: AuditFormDefaults;
   errorMessage?: string;
   status?: string;
 }) {
+  const [status, setStatus] = useState<string | null>(initialStatus || null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(initialErrorMessage || null);
+  const [isPending, setIsPending] = useState(false);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setIsPending(true);
+    setStatus(null);
+    setErrorMessage(null);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.status === "success") {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+        setErrorMessage(data.errorMessage || "Submission failed. Please try again.");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+      setErrorMessage("A network error occurred. Please verify your connection.");
+    } finally {
+      setIsPending(false);
+    }
+  }
+
   const isSuccess = status === "success";
   const isError = status === "error";
 
@@ -53,20 +97,20 @@ export function SeoAuditForm({
         </div>
 
         {isSuccess ? (
-          <div className="rounded-2xl border border-mint/40 bg-mint/10 px-4 py-3 text-sm text-ink">
+          <div className="rounded-2xl border border-mint/40 bg-mint/10 px-4 py-3 text-sm text-ink animate-reveal">
             Your audit request is in. We will review your setup and email the
             next steps shortly.
           </div>
         ) : null}
 
         {isError ? (
-          <div className="rounded-2xl border border-ember/30 bg-sand px-4 py-3 text-sm text-ink">
+          <div className="rounded-2xl border border-ember/30 bg-sand px-4 py-3 text-sm text-ink animate-reveal">
             {errorMessage ||
               "We could not send your request just yet. Please review the form and try again."}
           </div>
         ) : null}
 
-        <form action="/api/contact" method="post" className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <input type="hidden" name="intent" value="local-audit" />
           <input type="hidden" name="source" value="homepage-local-audit" />
           <input type="hidden" name="redirectTo" value="/#audit-form" />
@@ -159,9 +203,10 @@ export function SeoAuditForm({
 
           <button
             type="submit"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ember px-5 py-3 text-sm font-semibold text-white shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:bg-ember-dark"
+            disabled={isPending}
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ember px-5 py-3 text-sm font-semibold text-white shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:bg-ember-dark disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
-            Request my free audit
+            {isPending ? "Requesting audit..." : "Request my free audit"}
           </button>
         </form>
 
