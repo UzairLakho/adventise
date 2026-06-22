@@ -23,7 +23,7 @@ export default function FounderPage() {
         {/* Profile Card Container */}
         <div className="overflow-hidden rounded-[32px] border border-line bg-white shadow-soft transition-all duration-300 hover:border-ember/40">
           <div className="grid gap-8 p-8 sm:p-12 md:grid-cols-[1.1fr_1.9fr] md:items-start">
-            
+
             {/* Photo Column */}
             <div className="flex flex-col items-center gap-4">
               <div className="relative aspect-square w-full max-w-[280px] overflow-hidden rounded-2xl border-4 border-sand shadow-inner bg-sand">
@@ -67,13 +67,13 @@ export default function FounderPage() {
               {/* Contact Grid */}
               <div className="border-t border-line pt-6">
                 <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-slate mb-4">
-                  Direct Verification & Contact Details
+                  Contact Details
                 </h2>
-                
+
                 <div className="grid gap-4 sm:grid-cols-2">
                   {/* Phone */}
-                  <a 
-                    href="tel:+923136677628" 
+                  <a
+                    href="tel:+923136677628"
                     className="flex items-center gap-3 rounded-2xl border border-line bg-ivory/50 p-4 transition-all hover:bg-ivory hover:border-ember group"
                     id="contact-phone"
                   >
@@ -89,8 +89,8 @@ export default function FounderPage() {
                   </a>
 
                   {/* Email */}
-                  <a 
-                    href="mailto:uzairlakho16@gmail.com" 
+                  <a
+                    href="mailto:uzairlakho16@gmail.com"
                     className="flex items-center gap-3 rounded-2xl border border-line bg-ivory/50 p-4 transition-all hover:bg-ivory hover:border-ember group"
                     id="contact-email"
                   >
@@ -107,10 +107,10 @@ export default function FounderPage() {
                   </a>
 
                   {/* Social Profile */}
-                  <a 
-                    href="https://www.facebook.com/UzairAhmed2/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://www.facebook.com/UzairAhmed2/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-3 rounded-2xl border border-line bg-ivory/50 p-4 transition-all hover:bg-ivory hover:border-ember group sm:col-span-2"
                     id="contact-social"
                   >
@@ -126,7 +126,7 @@ export default function FounderPage() {
                   </a>
 
                   {/* Primary Address */}
-                  <div 
+                  <div
                     className="flex items-start gap-3 rounded-2xl border border-line bg-ivory/50 p-4 sm:col-span-2"
                     id="contact-address"
                   >
