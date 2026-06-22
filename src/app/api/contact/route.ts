@@ -626,7 +626,7 @@ function buildConfirmationText(intent: Intent, fields: FormFields) {
 }
 
 function getEmailConfig(): EmailConfig {
-  const fallbackTo = ["hello@adventise.com"];
+  const fallbackTo = ["uzairlakho16@gmail.com"];
   const to = parseEmailList(process.env.CONTACT_TO_EMAIL, fallbackTo);
   const replyTo = parseEmailList(process.env.CONTACT_REPLY_TO_EMAIL, to);
 
@@ -637,7 +637,7 @@ function getEmailConfig(): EmailConfig {
     to,
     from:
       process.env.CONTACT_FROM_EMAIL ||
-      "Adventise <hello@adventise.com>",
+      "Adventise <uzairlakho16@gmail.com>",
     replyTo,
   };
 }
@@ -742,7 +742,7 @@ export async function POST(request: Request) {
   const senderName = getSenderName(fields);
   const subject = buildNotificationSubject(intent, senderName, location);
   const confirmationSubject = buildConfirmationSubject(intent);
-  const confirmationReplyAddress = emailConfig.replyTo[0] || emailConfig.to[0] || "hello@adventise.com";
+  const confirmationReplyAddress = emailConfig.replyTo[0] || emailConfig.to[0] || "uzairlakho16@gmail.com";
 
   try {
     const { error } = await emailConfig.resend.emails.send({

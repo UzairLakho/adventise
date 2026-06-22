@@ -59,7 +59,7 @@ const organizationJsonLd = {
   name: "Adventise",
   url: "https://adventise.com",
   logo: "https://adventise.com/favicon.ico",
-  email: "hello@adventise.com",
+  email: "uzairlakho16@gmail.com",
 };
 
 export default function RootLayout({

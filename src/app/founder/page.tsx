@@ -124,6 +124,28 @@ export default function FounderPage() {
                       <span className="text-sm font-semibold text-ink group-hover:text-ember transition-colors">facebook.com/UzairAhmed2/</span>
                     </div>
                   </a>
+
+                  {/* Primary Address */}
+                  <div 
+                    className="flex items-start gap-3 rounded-2xl border border-line bg-ivory/50 p-4 sm:col-span-2"
+                    id="contact-address"
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-ember/10 text-ember">
+                      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                      </svg>
+                    </div>
+                    <div>
+                      <span className="block text-[10px] font-semibold uppercase tracking-wider text-slate">Primary Address (Payoneer Profile)</span>
+                      <span className="text-sm font-semibold text-ink block mt-0.5 leading-relaxed">
+                        House 28 Sachal Street sector 2,<br />
+                        Sukkur Township Sukkur,<br />
+                        Sukkur, 65200,<br />
+                        Pakistan
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
 

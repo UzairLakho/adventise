@@ -18,7 +18,7 @@ export default function SiteFooter() {
             more calls and quote requests.
           </p>
           <div className="text-sm font-semibold text-ink">
-            hello@adventise.com
+            <a href="mailto:uzairlakho16@gmail.com" className="hover:text-ember transition-colors">uzairlakho16@gmail.com</a>
           </div>
         </div>
         <div className="space-y-3 text-sm">

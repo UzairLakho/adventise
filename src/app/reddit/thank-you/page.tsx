@@ -30,7 +30,7 @@ export default function RedditThankYouPage() {
               <p>
                 If you want to speed this up and turn it into a quick discovery
                 call, email{" "}
-                <span className="font-semibold text-ink">hello@adventise.com</span>{" "}
+                <a href="mailto:uzairlakho16@gmail.com" className="font-semibold text-ink hover:text-ember transition-colors">uzairlakho16@gmail.com</a>{" "}
                 with your phone number, your business name, and two time
                 windows that work for you. Put{" "}
                 <span className="font-semibold text-ink">Reddit Audit Call</span>{" "}
@@ -54,7 +54,7 @@ export default function RedditThankYouPage() {
               </p>
             </div>
             <a
-              href="mailto:hello@adventise.com?subject=Reddit%20Audit%20Call"
+              href="mailto:uzairlakho16@gmail.com?subject=Reddit%20Audit%20Call"
               className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-ember px-5 py-3 text-sm font-semibold text-white shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:bg-ember-dark"
             >
               Email to set up a call

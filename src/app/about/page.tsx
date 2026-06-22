@@ -111,6 +111,14 @@ export default function AboutPage() {
                 <span className="block text-[10px] font-semibold uppercase tracking-wider text-slate">Direct Email</span>
                 <a href="mailto:uzairlakho16@gmail.com" className="font-semibold text-ink hover:text-ember transition-colors" id="about-founder-email">uzairlakho16@gmail.com</a>
               </div>
+              <div className="rounded-2xl border border-line bg-white p-4 sm:col-span-2">
+                <span className="block text-[10px] font-semibold uppercase tracking-wider text-slate">Primary Address (Payoneer Profile)</span>
+                <span className="text-sm font-semibold text-ink block mt-0.5 leading-relaxed" id="about-founder-address">
+                  House 28 Sachal Street sector 2,<br />
+                  Sukkur Township Sukkur, Sukkur,<br />
+                  65200, Pakistan
+                </span>
+              </div>
             </div>
             <div className="flex flex-wrap gap-4">
               <Button href="/founder" id="about-founder-profile-btn">View Founder Profile</Button>

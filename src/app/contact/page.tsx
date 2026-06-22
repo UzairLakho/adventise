@@ -200,8 +200,12 @@ export default async function ContactPage({
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
                 Contact
               </p>
-              <p className="mt-3 text-sm text-ink">hello@adventise.com</p>
-              <p className="mt-2 text-sm text-slate">(555) 210-4888</p>
+              <p className="mt-3 text-sm text-ink font-semibold">
+                <a href="mailto:uzairlakho16@gmail.com" className="hover:text-ember transition-colors">uzairlakho16@gmail.com</a>
+              </p>
+              <p className="mt-2 text-sm text-slate">
+                <a href="tel:+923136677628" className="hover:text-ember transition-colors">+92 313 6677628</a>
+              </p>
             </div>
             <div className="rounded-3xl border border-line bg-white p-6 shadow-soft">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
