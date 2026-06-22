@@ -8,8 +8,8 @@ const variants = {
   primary:
     "bg-ember text-white shadow-soft hover:-translate-y-0.5 hover:bg-ember-dark",
   secondary:
-    "border border-[#d9cbb9] bg-white text-[#0b1f2a] hover:-translate-y-0.5 hover:border-[#ff6b35] hover:text-[#ff6b35]",
-  ghost: "text-[#0b1f2a] hover:text-[#ff6b35]",
+    "btn-secondary hover:-translate-y-0.5",
+  ghost: "btn-ghost",
 };
 
 export function Button({

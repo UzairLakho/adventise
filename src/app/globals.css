@@ -138,4 +138,21 @@ a {
     box-shadow: 0 30px 70px rgba(11, 31, 42, 0.16);
     border-color: rgba(255, 107, 53, 0.4);
   }
+
+  .btn-secondary {
+    border: 1px solid #d9cbb9 !important;
+    background-color: #ffffff !important;
+    color: #0b1f2a !important;
+  }
+  .btn-secondary:hover {
+    border-color: #ff6b35 !important;
+    color: #ff6b35 !important;
+  }
+
+  .btn-ghost {
+    color: #0b1f2a !important;
+  }
+  .btn-ghost:hover {
+    color: #ff6b35 !important;
+  }
 }
