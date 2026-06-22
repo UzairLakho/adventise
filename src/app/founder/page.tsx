@@ -137,7 +137,7 @@ export default function FounderPage() {
                       </svg>
                     </div>
                     <div>
-                      <span className="block text-[10px] font-semibold uppercase tracking-wider text-slate">Primary Address (Payoneer Profile)</span>
+                      <span className="block text-[10px] font-semibold uppercase tracking-wider text-slate">Primary Address</span>
                       <span className="text-sm font-semibold text-ink block mt-0.5 leading-relaxed">
                         House 28 Sachal Street sector 2,<br />
                         Sukkur Township Sukkur,<br />
